@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <skin>
+  	<imgframe name="skin_default_logo48p" src="PNG:IDB_PNG_DEFAULTLOGO_48P" />
+    <imgframe name="skin_default_logo32p" src="PNG:IDB_PNG_DEFAULTLOGO_32P" />
+	<imgframe name="skin_lcex_header_arrow" src="imgx:png_lcex_header_arrow" states="2" />
+	<imgframe name="skin_lcex_selectrange" src="imgx:png_lcex_selectrange" margin-x="1" margin-y="1" />
+	<imgframe name="skin_lcex_header" src="imgx:png_lcex_header" states="4" margin-x="2" margin-y="2" />   
+	<imgframe name="skin_icon1" src="imgx:png_icon1" />
+	<imgframe name="skin_icon2" src="imgx:png_icon2" />
+	<imgframe name="skin_icon3" src="imgx:png_icon3" />
+	<imgframe name="skin_icon4" src="imgx:png_icon4" />
+	<imgframe name="skin_icon5" src="imgx:png_icon5" />
+	<imgframe name="skin_icon6" src="imgx:png_icon6" />
+	<imgframe name="skin_icon7" src="imgx:png_icon7" />
+	<imgframe name="skin_star1" src="imgx:png_star1" states="2" />
+
+	<imglist name="skin_busy" src="imgx:img_busy" states="8" />
+	<imglist name="skin_common_close" src="PNG:IDB_PNG_COMMON_CLOSE" states="4" />
+    <imglist name="skin_common_min" src="PNG:IDB_PNG_COMMON_MIN" states="4" />
+    <imglist name="skin_common_max" src="PNG:IDB_PNG_COMMON_MAX" states="4" />
+    <imglist name="skin_common_restore" src="PNG:IDB_PNG_COMMON_RESTORE" states="4" />
+	<!--纯色填充-->
+	<colorrect name="skin_rect_purclr" normal="#808080" />
+	
+	<!--聊天工具资源-->
+	<imglist name="skin_traymenu_icons"	src="img:traymenu_icons" states="9"/>
+    <scrollbar name="skin_scrollbar" src="PNG:IDB_PNG_SB" margin="3" hasgripper="0"/>
+    <vscrollbar name="skin_vscroll" src="PNG:IDB_PNG_VSCROLL" states="1" margin="3"/>
+    
+    <imgframe name="skin_shadow" src="PNG:IDB_PNG_SHADOW" />
+    <imgframe name="skin_green_shadow" src="PNG:IDB_PNG_GREENSHADOW" left="5" top="5" right="5" bottom="5"/>
+    <imgframe name="skin_default_bkgnd" src="PNG:IDB_PNG_DEFAULTBKGND" left="5" top="5" right="5" bottom="5"/>
+    
+    
+    <imglist name="skin_message" src="PNG:IDB_PNG_MESSAGE" states="3" />
+    <imglist name="skin_contact" src="PNG:IDB_PNG_CONTACT" states="3" />
+    <imglist name="skin_favorites" src="PNG:IDB_PNG_FAVORITES" states="3" />
+    <imglist name="skin_menu" src="PNG:IDB_PNG_MENU" states="3" />
+    <imglist name="skin_more" src="PNG:IDB_PNG_MORE" states="3" />
+    <imglist name="skin_add" src="PNG:IDB_PNG_ADD" states="3" />
+    <imgframe name="skin_search" src="PNG:IDB_PNG_SEARCH" />
+
+    <imgframe name="skin_personal" src="PNG:IDB_PNG_PERSONAL" />
+    <imgframe name="skin_group" src="PNG:IDB_PNG_GROUP" />
+    <imgframe name="skin_filehelper" src="PNG:IDB_PNG_FILEHELPER" />
+    <imgframe name="skin_gzh" src="PNG:IDB_PNG_GZH" />
+    <imgframe name="skin_dyh" src="PNG:IDB_PNG_DYH" />
+    <imgframe name="skin_news" src="PNG:IDB_PNG_NEWS" />
+    
+    <imglist name="skin_emotion" src="PNG:IDB_PNG_EMOTION" states="3" />
+    <imglist name="skin_image" src="PNG:IDB_PNG_IMAGE" states="3" />
+    <imglist name="skin_file" src="PNG:IDB_PNG_FILE" states="3" />
+    <imglist name="skin_snapshot" src="PNG:IDB_PNG_SNAPSHOT" states="3" />
+    <imglist name="skin_snapshot_arrow" src="PNG:IDB_PNG_SNAPSHOT_ARROW" states="3" />
+    <imglist name="skin_history" src="PNG:IDB_PNG_HISTORY" states="3" />
+    <imglist name="skin_send" src="PNG:IDB_PNG_SEND" states="4" />
+
+    <!--菜单相关资源-->
+    <imgframe name="skin_menu_bkg" src="PNG:IDB_PNG_MENUSKIN" left="8" top="4" right="8" bottom="12"/>
+    <imgframe name="skin_menu_sep" src="PNG:IDB_PNG_MENUSEP" />
+    <imglist name="skin_menu_itembkg" src="PNG:IDB_PNG_MENUITEMSKIN" states="2"/>
+    <imgframe name="skin_menu_check" src="PNG:IDB_PNG_MENUCHECK" />
+    <imglist name="skin_menu_triangle" src="PNG:IDB_MENUTRIANGLE" states="2" />
+
+    <imgframe name="skin_left_bubble" src="PNG:IDB_PNG_LEFTBUBBLE" left="10" top="28" right="5" bottom="10"/>
+    <imgframe name="skin_right_bubble" src="PNG:IDB_PNG_RIGHTBUBBLE" left="10" top="28" right="10" bottom="10"/>
+    <imgframe name="skin_right_otherbubble" src="PNG:IDB_PNG_RIGHTOTHERBUBBLE" left="10" top="28" right="10" bottom="5" />
+    <imgframe name="skin_default_bg" src="PNG:IDB_PNG_DEFAULTBG" />
+    <imgframe name="skin.fetch_more_msg" src="PNG:IDB_PNG_RICHEDIT_MOREMSG" />
+    <antialias name="skin.richedit.loading" src="PNG:IDB_PNG_RICHEDIT_MORELOADING" />
+    <imgframe name="skin.richedit_resend" src="PNG:IDB_PNG_RICHEDIT_RESEND" />
+    <imgframe name="skin.rich_sysmsg_bk" src="PNG:ID_RICH_SYSMSG_BK" left="9" top="9" right="9" bottom="9"/>
+
+    <imgframe name="skin.rich_file_bk" src="PNG:ID_RICH_FILE_BK" left="14" top="20" right="14" bottom="20"/>
+    <imgframe name="skin.file_icon_text" src="PNG:ID_FILE_ICON_TEXT" />
+    <imgframe name="skin.empty"	src="PNG:ID_EMPTY"/>
+    
+    <imglist name="skin_search_cancel" src="PNG:IDB_PNG_SEARCHCANCEL" states="3" />
+
+    <!--截图相关skin-->
+    <imglist name="skin_rect" src="PNG:IDB_PNG_RECT" states="4" />
+    <imglist name="skin_ellipse" src="PNG:IDB_PNG_ELLIPSE" states="4" />
+    <imglist name="skin_arrow" src="PNG:IDB_PNG_ARROW" states="4" />
+    <imglist name="skin_word" src="PNG:IDB_PNG_WORD" states="4" />
+    <imglist name="skin_finish" src="PNG:IDB_PNG_FINISH" states="4" />
+    <imglist name="skin_cancel" src="PNG:IDB_PNG_CANCEL" states="4" />
+    <imglist name="skin_save" src="PNG:IDB_PNG_SAVE" states="4" />
+    <imglist name="skin_doodle" src="PNG:IDB_PNG_DOODLE" states="4" />
+    <imglist name="skin_copy" src="PNG:IDB_PNG_COPY" states="4" />
+    <imglist name="skin_mask" src="PNG:IDB_PNG_MASK" states="4" />
+    <imglist name="skin_revoke" src="PNG:IDB_PNG_REVOKE" states="4" />
+
+    <imglist name="skin_smalldot" src="PNG:IDB_PNG_SMALLDOT" states="4" />
+    <imglist name="skin_middledot" src="PNG:IDB_PNG_MIDDLEDOT" states="4" />
+    <imglist name="skin_bigdot" src="PNG:IDB_PNG_BIGDOT" states="4" />
+
+    <imglist name="skin_c1" src="PNG:IDB_PNG_C1" states="4" />
+    <imglist name="skin_c2" src="PNG:IDB_PNG_C2" states="4" />
+    <imglist name="skin_c3" src="PNG:IDB_PNG_C3" states="4" />
+    <imglist name="skin_c4" src="PNG:IDB_PNG_C4" states="4" />
+    <imglist name="skin_c5" src="PNG:IDB_PNG_C5" states="4" />
+    <imglist name="skin_c6" src="PNG:IDB_PNG_C6" states="4" />
+    <imglist name="skin_c7" src="PNG:IDB_PNG_C7" states="4" />
+    <imglist name="skin_c8" src="PNG:IDB_PNG_C8" states="4" />
+    <imglist name="skin_c9" src="PNG:IDB_PNG_C9" states="4" />
+    <imglist name="skin_c10" src="PNG:IDB_PNG_C10" states="4" />
+    <imglist name="skin_c11" src="PNG:IDB_PNG_C11" states="4" />
+    <imglist name="skin_c12" src="PNG:IDB_PNG_C12" states="4" />
+    <imglist name="skin_c13" src="PNG:IDB_PNG_C13" states="4" />
+    <imglist name="skin_c14" src="PNG:IDB_PNG_C14" states="4" />
+    <imglist name="skin_c15" src="PNG:IDB_PNG_C15" states="4" />
+    <imglist name="skin_c16" src="PNG:IDB_PNG_C16" states="4" />
+    <imglist name="skin_c17" src="PNG:IDB_PNG_C17" states="4" />
+    <imglist name="skin_c18" src="PNG:IDB_PNG_C18" states="4" />
+    <imglist name="skin_c19" src="PNG:IDB_PNG_C19" states="4" />
+    <imglist name="skin_c20" src="PNG:IDB_PNG_C20" states="4" />
+
+    <imgframe name="skin_vline" src="PNG:IDB_PNG_VLINE" />
+    <imgframe name="skin_word_sign" src="PNG:IDB_PNG_WORDSING" />
+    <imglist name="skin_cbx_btn" src="PNG:IDB_PNG_CBXBTN" states="3" />
+</skin>

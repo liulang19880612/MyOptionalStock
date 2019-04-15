@@ -1,0 +1,40 @@
+﻿<SOUI name="mainWindow" 
+      title="@string/title" 
+      bigIcon="ICON_LOGO:32" 
+      smallIcon="ICON_LOGO:16" 
+      width="910" height="570" 
+      minsize="910,570"
+      margin="0,0,0,0"  
+      resizable="1" 
+      wndType="appMain"
+      appWnd="1"
+      sendWheel2Hover="1"
+      translucent="1">
+  <root skin="skin_shadow" cache="1">
+    <caption pos="0,0,-0,-0" colorBkgnd="rgb(230,234,238)" show="1" font="adding:0">
+      <imgbtn name="btn_close" skin="skin_common_close"    pos="-50,0" tip="关闭" animate="1" cursor="hand"/>
+      <imgbtn name="btn_max"   skin="skin_common_max"  pos="-100,{0" animate="1" cursor="hand"/>
+      <imgbtn name="btn_restore" skin="skin_common_restore"  pos="-100,{0" show="0" animate="1" cursor="hand"/>
+      <imgbtn name="btn_min"     skin="skin_common_min" pos="-150,{0" animate="1" cursor="hand"/>
+	  <imgbtn name="btn_im_chart"     skin="skin_message" pos="-200,{0" animate="1" cursor="hand"/>
+	  <img name="main_logo" pos="10,10" skin="skin_default_logo32p" msgTransparent="0" cursor="hand"/> 
+      <text name="page_name"
+              pos="[10,15,-75,35"
+              align="left"
+              dotted="1"
+              colorText="#333333"
+              font="face:微软雅黑,size:16,adding:1">我的自选股</text>
+	   <tabctrl pos="0,50,-0,-0" name="tab_ctrls" font="style:StrokeAndFill,blurStyle:solid,blurRadius:3" animateSteps="10" animateType="1" tabHeight="0">
+			<page title="kline">
+				<chartctrl name="mychart" pos="0,0,-0,-0"  backgroundskin="skin_rect_purclr" clrCursorLine="RGBA(255,255,255,255)" 
+				axiswidth="100" titlehight="20" >
+					<charttitlectrl  name="title"   margin="1,1,0,0" colorBorder="rgb(255,0,0)" backgroundskin="skin_rect_purclr"></charttitlectrl>
+				</chartctrl>
+			</page>
+			<page name="quotelist">
+				<include src="layout:XML_QUOTE_LIST"/>
+			</page>
+	   </tabctrl>
+     </caption>
+  </root>
+</SOUI>

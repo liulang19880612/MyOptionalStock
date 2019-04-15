@@ -1,0 +1,70 @@
+﻿<include>
+   <tabctrl pos="0,0,-0,-0" name="tab_ctrls" font="style:StrokeAndFill,blurStyle:solid,blurRadius:3" animateSteps="10" animateType="1" tabHeight="0">
+		<page title="mclistview">
+			<gridctrl name="quote_grid_view" colorBkgnd="rgb(230,234,238)" pos="0,0,-0,-0" headerHeight="30">
+				<gridheaderctrl name="header_quote" align="center"   fixedcol="2" sortSkin="skin_lcex_header_arrow" itemSkin="skin_rect_purclr" itemSwapEnable="1" fixWidth="0" font="underline:0,adding:-3" sortHeader="1" colorBkgnd="#ffffff" >
+				  <items>
+					<item width="120" >@string/mccol_1</item>
+					<item width="120">@string/mccol_2</item>
+					<item width="120">@string/mccol_3</item>
+					<item width="120">@string/mccol_4</item>
+					<item width="120">@string/mccol_5</item>
+					<item width="120">@string/mccol_6</item>
+					<item width="120">@string/mccol_7</item>
+					<item width="120">@string/mccol_9</item>
+					<item width="120">@string/mccol_10</item>
+					<item width="120">@string/mccol_11</item>
+					<item width="120">@string/mccol_12</item>
+					<item width="120">@string/mccol_13</item>
+					<item width="120">@string/mccol_14</item>
+					<item width="120">@string/mccol_15</item>
+				  </items>
+				</gridheaderctrl>
+				<template itemHeight="30" colorHover="#cccccc" colorSelected="#0000ff">
+				  <window name="col1" clipClient="1">
+						<text name="txt_code_id"></text>
+				  </window>
+				  <window name="col2" clipClient="1">
+						<text name="txt_code_name"></text>
+				  </window>
+				  <window name="col3" clipClient="1">
+						<text name="txt_code_lastprice"></text>
+				  </window>
+				  <window  name="col4" clipClient="1">
+						<text name="txt_code_lastvol" ></text>
+				  </window>
+				  <window name="col5" clipClient="1">
+						<text name="txt_code_uplift"  ></text>
+				  </window>
+				  <window name="col6" clipClient="1">
+						<text name="txt_code_tradevol"  ></text>
+				  </window>
+				  <window name="col7" clipClient="1">
+						<text name="txt_code_tradeamount"  ></text>
+				  </window>
+				  <window name="col8" clipClient="1">
+						<text name="txt_code_id"></text>
+				  </window>
+				  <window name="col9" clipClient="1">
+						<text name="txt_code_name"></text>
+				  </window>
+				  <window name="col10" clipClient="1">
+						<text name="txt_code_lastprice"></text>
+				  </window>
+				  <window  name="col11" clipClient="1">
+						<text name="txt_code_lastvol" ></text>
+				  </window>
+				  <window name="col12" clipClient="1">
+						<text name="txt_code_uplift"  ></text>
+				  </window>
+				  <window name="col13" clipClient="1">
+						<text name="txt_code_tradevol"  ></text>
+				  </window>
+				  <window name="col14" clipClient="1">
+						<text name="txt_code_tradeamount"  ></text>
+				  </window>
+				</template>
+			</gridctrl>
+		</page>
+   </tabctrl>
+</include>

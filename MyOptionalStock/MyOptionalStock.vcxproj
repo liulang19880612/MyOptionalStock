@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2AA43CB9-67D0-4F23-9D13-AB4096C63048}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>MyOptionalStock</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\output\</OutDir>
+    <IntDir>..\output\obj\debug\MyOptionalStock\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.;..\..\..\controls.extend;..\..\..\utilities\include;..\..\..\soui\include;..\..\..\components;..\..\..\config;..\..\..\tools\mkspecs\win32-msvc2008;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>utilitiesd.lib;souid.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)\pdb\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChartCtrl\Axis.h" />
+    <ClInclude Include="ChartCtrl\AxisChart.h" />
+    <ClInclude Include="ChartCtrl\CandleChart.h" />
+    <ClInclude Include="ChartCtrl\ChartCtrl.h" />
+    <ClInclude Include="ChartCtrl\ChartTitleCtrl.h" />
+    <ClInclude Include="ChartCtrl\DynaChart.h" />
+    <ClInclude Include="ChartCtrl\KChart.h" />
+    <ClInclude Include="ChartCtrl\RectChart.h" />
+    <ClInclude Include="ChartCtrl\SeriesData.h" />
+    <ClInclude Include="ChartCtrl\SeriesObject.h" />
+    <ClInclude Include="ChartCtrl\Shape.h" />
+    <ClInclude Include="ChartCtrl\ShapeChart.h" />
+    <ClInclude Include="ChartCtrl\ShapeFactory.h" />
+    <ClInclude Include="ChartCtrl\ShapePen.h" />
+    <ClInclude Include="ChartCtrl\TimeAxis.h" />
+    <ClInclude Include="ChartCtrl\TipButton.h" />
+    <ClInclude Include="ExternCtrls\DragView.h" />
+    <ClInclude Include="ExternCtrls\ExtendCtrls.h" />
+    <ClInclude Include="ExternCtrls\gif\SAniImgFrame.h" />
+    <ClInclude Include="ExternCtrls\gif\SGifPlayer.h" />
+    <ClInclude Include="ExternCtrls\gif\SSkinAPNG.h" />
+    <ClInclude Include="ExternCtrls\gif\SSkinGif.h" />
+    <ClInclude Include="ExternCtrls\GridCtrl.h" />
+    <ClInclude Include="ExternCtrls\GridHeaderCtrl.h" />
+    <ClInclude Include="ExternCtrls\imre\ClipboardConverter.h" />
+    <ClInclude Include="ExternCtrls\imre\dataobject.h" />
+    <ClInclude Include="ExternCtrls\imre\HTMLParser.h" />
+    <ClInclude Include="ExternCtrls\imre\HTTPDownloader.h" />
+    <ClInclude Include="ExternCtrls\imre\ImgProvider.h" />
+    <ClInclude Include="ExternCtrls\imre\IRichEditObjHost.h" />
+    <ClInclude Include="ExternCtrls\imre\RichEditObj.h" />
+    <ClInclude Include="ExternCtrls\imre\RichEditObjEvents.h" />
+    <ClInclude Include="ExternCtrls\imre\RichEditObjFactory.h" />
+    <ClInclude Include="ExternCtrls\imre\RichEditOleBase.h" />
+    <ClInclude Include="ExternCtrls\imre\RichEditOleCallback.h" />
+    <ClInclude Include="ExternCtrls\imre\RichEditOleCtrls.h" />
+    <ClInclude Include="ExternCtrls\imre\RichEditUnitConverter.h" />
+    <ClInclude Include="ExternCtrls\imre\SImRichEdit.h" />
+    <ClInclude Include="ExternCtrls\SButtonEx.h" />
+    <ClInclude Include="ExternCtrls\SGroupList.h" />
+    <ClInclude Include="ExternCtrls\SImageView.h" />
+    <ClInclude Include="ExternCtrls\SSplitBar.h" />
+    <ClInclude Include="ExternEvent\ExtendEvents.h" />
+    <ClInclude Include="ExternSkins\ExtendSkins.h" />
+    <ClInclude Include="ExternSkins\SAntialiasSkin.h" />
+    <ClInclude Include="ExternSkins\SVscrollbar.h" />
+    <ClInclude Include="GlobalUnits.h" />
+    <ClInclude Include="IMChart\ContactImpl.h" />
+    <ClInclude Include="IMChart\EmojiDlg.h" />
+    <ClInclude Include="IMChart\IMChartDlg.h" />
+    <ClInclude Include="IMChart\LastTalkImpl.h" />
+    <ClInclude Include="IMChart\Snapshot\CBitmap.h" />
+    <ClInclude Include="IMChart\Snapshot\CEdit9527.h" />
+    <ClInclude Include="IMChart\Snapshot\CGdiDc.h" />
+    <ClInclude Include="IMChart\Snapshot\CPixelateGrid.h" />
+    <ClInclude Include="IMChart\Snapshot\CWindowEnumer.h" />
+    <ClInclude Include="IMChart\Snapshot\IWordSizeAdapterCallback.h" />
+    <ClInclude Include="IMChart\Snapshot\SnapshotDlg.h" />
+    <ClInclude Include="IMChart\Snapshot\SSnapshotCtrl.h" />
+    <ClInclude Include="IMChart\Snapshot\WordSizeAdapter.h" />
+    <ClInclude Include="KeyboardWizardDlg.h" />
+    <ClInclude Include="MenuWrapper.h" />
+    <ClInclude Include="MyOptionalStock.h" />
+    <ClInclude Include="MainDlg.h" />
+    <ClInclude Include="PageImplBase.h" />
+    <ClInclude Include="QuoteListImpl.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ChartCtrl\Axis.cpp" />
+    <ClCompile Include="ChartCtrl\AxisChart.cpp" />
+    <ClCompile Include="ChartCtrl\CandleChart.cpp" />
+    <ClCompile Include="ChartCtrl\ChartCtrl.cpp" />
+    <ClCompile Include="ChartCtrl\ChartTitleCtrl.cpp" />
+    <ClCompile Include="ChartCtrl\DynaChart.cpp" />
+    <ClCompile Include="ChartCtrl\KChart.cpp" />
+    <ClCompile Include="ChartCtrl\RectChart.cpp" />
+    <ClCompile Include="ChartCtrl\SeriesObject.cpp" />
+    <ClCompile Include="ChartCtrl\Shape.cpp" />
+    <ClCompile Include="ChartCtrl\ShapeChart.cpp" />
+    <ClCompile Include="ChartCtrl\ShapeFactory.cpp" />
+    <ClCompile Include="ChartCtrl\ShapePen.cpp" />
+    <ClCompile Include="ChartCtrl\TimeAxis.cpp" />
+    <ClCompile Include="ChartCtrl\TipButton.cpp" />
+    <ClCompile Include="ExternCtrls\DragView.cpp" />
+    <ClCompile Include="ExternCtrls\ExtendCtrls.cpp" />
+    <ClCompile Include="ExternCtrls\gif\SGifPlayer.cpp" />
+    <ClCompile Include="ExternCtrls\gif\SSkinAPNG.cpp" />
+    <ClCompile Include="ExternCtrls\gif\SSkinGif.cpp" />
+    <ClCompile Include="ExternCtrls\GridCtrl.cpp" />
+    <ClCompile Include="ExternCtrls\GridHeaderCtrl.cpp" />
+    <ClCompile Include="ExternCtrls\imre\ClipboardConverter.cpp" />
+    <ClCompile Include="ExternCtrls\imre\dataobject.cpp" />
+    <ClCompile Include="ExternCtrls\imre\HTMLParser.cpp" />
+    <ClCompile Include="ExternCtrls\imre\HTTPDownloader.cpp" />
+    <ClCompile Include="ExternCtrls\imre\ImgProvider.cpp" />
+    <ClCompile Include="ExternCtrls\imre\RichEditObj.cpp" />
+    <ClCompile Include="ExternCtrls\imre\RichEditObjFactory.cpp" />
+    <ClCompile Include="ExternCtrls\imre\RichEditOleBase.cpp" />
+    <ClCompile Include="ExternCtrls\imre\RichEditOleCallback.cpp" />
+    <ClCompile Include="ExternCtrls\imre\RichEditOleCtrls.cpp" />
+    <ClCompile Include="ExternCtrls\imre\RichEditUnitConverter.cpp" />
+    <ClCompile Include="ExternCtrls\imre\SImRichedit.cpp" />
+    <ClCompile Include="ExternCtrls\SButtonEx.cpp" />
+    <ClCompile Include="ExternCtrls\SGroupList.cpp" />
+    <ClCompile Include="ExternCtrls\SImageView.cpp" />
+    <ClCompile Include="ExternCtrls\SplitBar.cpp" />
+    <ClCompile Include="ExternSkins\ExtendSkins.cpp" />
+    <ClCompile Include="ExternSkins\SAntialiasSkin.cpp" />
+    <ClCompile Include="GlobalUnits.cpp" />
+    <ClCompile Include="IMChart\ContactImpl.cpp" />
+    <ClCompile Include="IMChart\EmojiDlg.cpp" />
+    <ClCompile Include="IMChart\IMChartDlg.cpp" />
+    <ClCompile Include="IMChart\LastTalkImpl.cpp" />
+    <ClCompile Include="IMChart\Snapshot\CEdit9527.cpp" />
+    <ClCompile Include="IMChart\Snapshot\CWindowEnumer.cpp" />
+    <ClCompile Include="IMChart\Snapshot\SnapshotDlg.cpp" />
+    <ClCompile Include="IMChart\Snapshot\SSnapshotCtrl.cpp" />
+    <ClCompile Include="KeyboardWizardDlg.cpp" />
+    <ClCompile Include="MenuWrapper.cpp" />
+    <ClCompile Include="MyOptionalStock.cpp" />
+    <ClCompile Include="MainDlg.cpp" />
+    <ClCompile Include="PageImplBase.cpp" />
+    <ClCompile Include="QuoteListImpl.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="utils.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

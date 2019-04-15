@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resource>
+	<UIDEF>
+		<file name="XML_INIT" path="uidef\init.xml"/>
+	</UIDEF>
+	<LAYOUT>
+		<file name="XML_MAINWND"     path="xml\dlg_main.xml"/>
+		<file name="XML_AUTO_PROMPT" path="xml\auto_prompt.xml"/>
+		<file name="XML_QUOTE_LIST"  path="xml\quotelist.xml"/>
+		<!--聊天工具-->
+		<file name="XML_IMCHART"                path="xml\IMXml\im_chart_dlg.xml"/>
+		<file name="XML_PAGE_LASTTALK"          path="xml\IMXml\page_list_lasttalk.xml" />
+		<file name="XML_PAGE_CONTACT"           path="xml\IMXml\page_list_contact.xml" />
+		<file name="XML_PAGE_FAVORITES"         path="xml\IMXml\page_list_favorites.xml" />
+		<file name="XML_PAGE_SEARCHRESULT"      path="xml\IMXml\page_list_search.xml" />
+		<file name="XML_PAGE_COMMON_PERSONAL"   path="xml\IMXml\page_common_personal.xml"/>
+		<file name="XML_PAGE_COMMON_GROUP"      path="xml\IMXml\page_common_group.xml"/>
+		<file name="XML_PAGE_COMMON_FILEHELPER" path="xml\IMXml\page_common_filehelper.xml"/>
+		<file name="XML_PAGE_DYH"               path="xml\IMXml\page_common_dyh.xml" />
+		<file name="XML_PAGE_GZH"               path="xml\IMXml\page_common_gzh.xml" />
+		<file name="XML_PAGE_NEWS"              path="xml\IMXml\page_common_news.xml" />
+		<file name="XML_DLG_SNAPSHOT"           path="xml\IMXml\Snapshot\dlg_snapshot.xml" />
+		<!--表情弹出框-->
+		<file name="XML_DLG_EMOJI"              path="xml\IMXml\dlg_emoji.xml"/>
+
+		<!--RichEditOLE元素相关的布局-->
+		<file name="FileOleLayout"      path="xml\IMXml\richeditole\fileole.xml" />
+		<!--文件OLE-->
+		<file name="SeperatorOleLayout" path="xml\IMXml\richeditole\splitlineole.xml" />
+		<!--分割线OLE-->
+		<file name="ImageOleLayout"     path="xml\IMXml\richeditole\imageole.xml" />
+		<!--图片OLE-->
+		<file name="FetchMoreOleLayout" path="xml\IMXml\richeditole\fetchmoreole.xml" />
+		<!--更多消息OLE-->
+		<file name="RemainderOleLayout" path="xml\IMXml\richeditole\remainderole.xml" />
+		<file name="MetaFileOleLayout"  path="xml\IMXml\richeditole\MetaFileOle.xml" />
+		<file name="AudioOleLayout"     path="xml\IMXml\richeditole\audioole.xml" />
+		<file name="VideoOleLayout"     path="xml\IMXml\richeditole\videoole.xml" />
+		<file name="LocationOleLayout"  path="xml\IMXml\richeditole\locationole.xml" />
+		<file name="LinkOleLayout"      path="xml\IMXml\richeditole\linkole.xml" />
+		<file name="XML_DLG_SNAPSHOT"   path="xml\IMXml\Snapshot\dlg_snapshot.xml" />
+		<file name="XML_DLG_EMOJI"      path="xml\IMXml\dlg_emoji.xml" />
+	</LAYOUT>
+	<values>
+		<file name="string" path="values\string.xml" />
+		<file name="skin"   path="values\skin.xml"/>
+	</values>
+	<CURSOR>
+		<file name="normal" path="IMImage\cur\cur202.cur"/>
+		<file name="opt1"   path="IMImage\cur\cur104.cur"/>
+		<file name="opt2"   path="IMImage\cur\Handwriting.cur"/>
+		<file name="opt3_1" path="IMImage\cur\cur110.cur"/>
+		<file name="opt3_2" path="IMImage\cur\cur111.cur"/>
+		<file name="opt3_3" path="IMImage\cur\cur112.cur"/>
+	</CURSOR>
+	<PNG>
+		<file name="IDB_PNG_DEFAULTLOGO_48P" path="image\default_logo48.png" />
+		<file name="IDB_PNG_DEFAULTLOGO_32P" path="image\default_logo32.png" />
+		<file name="IDB_PNG_SB"              path="image\sb.png" />
+		<file name="IDB_PNG_VSCROLL"         path="image\vscrollbar.png" />
+		<file name="IDB_PNG_SHADOW"          path="image\common\shadow.png" />
+		<file name="IDB_PNG_GREENSHADOW"     path="image\common\green_shadow.png" />
+		<file name="IDB_PNG_DEFAULTBKGND"    path="image\common\default_bkgnd.png" />
+		<file name="IDB_PNG_COMMON_CLOSE"    path="image\common\comm_close.png" />
+		<file name="IDB_PNG_COMMON_MIN"      path="image\common\comm_min.png" />
+		<file name="IDB_PNG_COMMON_MAX"      path="image\common\comm_max.png" />
+		<file name="IDB_PNG_COMMON_RESTORE"  path="image\common\comm_restore.png" />
+	 
+		<file name="IDB_PNG_MESSAGE"    path="image\message.png" />
+		<file name="IDB_PNG_CONTACT"    path="image\contact.png" />
+		<file name="IDB_PNG_FAVORITES"  path="image\favorites.png" />
+		<file name="IDB_PNG_MENU"       path="image\menu.png" />
+		<file name="IDB_PNG_MORE"       path="image\more.png" />
+		<file name="IDB_PNG_ADD"        path="image\add.png" />
+		<file name="IDB_PNG_SEARCH"     path="image\search.png" />
+
+		
+		<file name="IDB_PNG_PERSONAL"    path="image\personal.png" />
+		<file name="IDB_PNG_GROUP"       path="image\group.png" />
+		<file name="IDB_PNG_FILEHELPER"  path="image\filehelper.png" />
+		<file name="IDB_PNG_GZH"         path="image\gzh.png" />
+		<file name="IDB_PNG_DYH"         path="image\dyh.png" />
+		<file name="IDB_PNG_NEWS"        path="image\news.png" />
+		
+		<file name="IDB_PNG_EMOTION"        path="image\emotion.png" />
+		<file name="IDB_PNG_IMAGE"          path="image\image.png" />
+		<file name="IDB_PNG_FILE"           path="image\file.png" />
+		<file name="IDB_PNG_SNAPSHOT"       path="image\snapshot.png" />
+		<file name="IDB_PNG_SNAPSHOT_ARROW" path="image\snapshot_arrow.png" />
+		<file name="IDB_PNG_HISTORY"        path="image\history.png" />
+		<file name="IDB_PNG_SEND"           path="image\send.png" />
+
+		<!--菜单相关资源-->
+		<file name="IDB_PNG_MENUSKIN"     path="IMImage\menu\menu_skin.png" />
+		<file name="IDB_PNG_MENUSEP"      path="IMImage\menu\menu_sep.png" />
+		<file name="IDB_PNG_MENUITEMSKIN" path="IMImage\menu\menu_itemskin.png" />
+		<file name="IDB_PNG_MENUCHECK"    path="IMImage\menu\menu_check.png" />
+		<file name="IDB_MENUTRIANGLE"     path="IMImage\menu\triangle.png" />
+
+		<file name="IDB_PNG_LEFTBUBBLE"           path="IMImage\chat\left_bubble.png" />
+		<file name="IDB_PNG_RIGHTBUBBLE"          path="IMImage\chat\right_bubble.png" />
+		<file name="IDB_PNG_RIGHTOTHERBUBBLE"     path="IMImage\chat\right_other_bubble.png" />
+		<file name="IDB_PNG_DEFAULTBG"            path="IMImage\chat\default_bg.png" />
+		<file name="IDB_PNG_RICHEDIT_MOREMSG"     path="IMImage\chat\richedit_more.png" />
+		<file name="IDB_PNG_RICHEDIT_MORELOADING" path="IMImage\chat\richedit_moreloading.gif" />
+		<file name="IDB_PNG_RICHEDIT_RESEND"      path="IMImage\chat\richedit_resend.png" />
+		<file name="ID_RICH_SYSMSG_BK"            path="IMImage\chat\aio_sys_bg.png"/>
+
+		<!--文件ole相关资源-->
+		<file name="ID_EMPTY"             path="IMImage\chat\empty.png"/>
+		<file name="ID_RICH_FILE_BK"      path="IMImage\chat\richframe_bkg_no_spliter.png"/>
+		<file name="ID_FILE_ICON_TEXT"    path="IMImage\chat\text.png"/>
+		<file name="IDB_PNG_SEARCHCANCEL" path="IMImage\common\btn_cancel.png" />
+
+		<!--截图相关资源-->
+		<file name="IDB_PNG_RECT"    path="IMImage\Snapshot\rect.png" />
+		<file name="IDB_PNG_ELLIPSE" path="IMImage\Snapshot\ellipse.png" />
+		<file name="IDB_PNG_ARROW"   path="IMImage\Snapshot\arrow.png" />
+		<file name="IDB_PNG_WORD"    path="IMImage\Snapshot\word.png" />
+		<file name="IDB_PNG_FINISH"  path="IMImage\Snapshot\send.png" />
+		<file name="IDB_PNG_SAVE"    path="IMImage\Snapshot\save.png" />
+		<file name="IDB_PNG_CANCEL"  path="IMImage\Snapshot\close.png" />
+		<file name="IDB_PNG_DOODLE"  path="IMImage\Snapshot\doodle.png" />
+		<file name="IDB_PNG_COPY"    path="IMImage\Snapshot\copy.png" />
+		<file name="IDB_PNG_MASK"    path="IMImage\Snapshot\mask.png" />
+		<file name="IDB_PNG_REVOKE"  path="IMImage\Snapshot\revoke.png" />
+
+		<file name="IDB_PNG_SMALLDOT"  path="IMImage\Snapshot\dotsmall.png" />
+		<file name="IDB_PNG_MIDDLEDOT" path="IMImage\Snapshot\dotstd.png" />
+		<file name="IDB_PNG_BIGDOT"    path="IMImage\Snapshot\dotsbig.png" />
+
+		<file name="IDB_PNG_C1"  path="IMImage\Snapshot\c1.png" />
+		<file name="IDB_PNG_C2"  path="IMImage\Snapshot\c2.png" />
+		<file name="IDB_PNG_C3"  path="IMImage\Snapshot\c3.png" />
+		<file name="IDB_PNG_C4"  path="IMImage\Snapshot\c4.png" />
+		<file name="IDB_PNG_C5"  path="IMImage\Snapshot\c5.png" />
+		<file name="IDB_PNG_C6"  path="IMImage\Snapshot\c6.png" />
+		<file name="IDB_PNG_C7"  path="IMImage\Snapshot\c7.png" />
+		<file name="IDB_PNG_C8"  path="IMImage\Snapshot\c8.png" />
+		<file name="IDB_PNG_C9"  path="IMImage\Snapshot\c9.png" />
+		<file name="IDB_PNG_C10" path="IMImage\Snapshot\c10.png" />
+		<file name="IDB_PNG_C11" path="IMImage\Snapshot\c11.png" />
+		<file name="IDB_PNG_C12" path="IMImage\Snapshot\c12.png" />
+		<file name="IDB_PNG_C13" path="IMImage\Snapshot\c13.png" />
+		<file name="IDB_PNG_C14" path="IMImage\Snapshot\c14.png" />
+		<file name="IDB_PNG_C15" path="IMImage\Snapshot\c15.png" />
+		<file name="IDB_PNG_C16" path="IMImage\Snapshot\c16.png" />
+		<file name="IDB_PNG_C17" path="IMImage\Snapshot\c17.png" />
+		<file name="IDB_PNG_C18" path="IMImage\Snapshot\c18.png" />
+		<file name="IDB_PNG_C19" path="IMImage\Snapshot\c19.png" />
+		<file name="IDB_PNG_C20" path="IMImage\Snapshot\c20.png" />
+		<file name="IDB_PNG_WORDSING" path="IMImage\Snapshot\word_sign.png" />
+		<file name="IDB_PNG_CBXBTN"   path="IMImage\Snapshot\cbx_btn.png" />
+		<file name="IDB_PNG_VLINE"    path="IMImage\Snapshot\vlinepx33.png" />
+	</PNG>
+	<ICON>
+		<!--APP图标-->
+		<file name="ICON_LOGO"  path="image\soui.ico"/>
+	</ICON>
+	<IMGX>
+		<file name="png_lcex_header" path="image\lcex_header.png" />
+		<file name="png_lcex_header_arrow" path="image\lcex_header_arrow.png" />
+		<file name="png_lcex_selectrange" path="image\lcex_selectrange.png" />
+		<file name="png_install" path="image\icon\button_install.png" />
+		<file name="png_icon1" path="image\icon\1.png" />
+		<file name="png_icon2" path="image\icon\2.png" />
+		<file name="png_icon3" path="image\icon\3.png" />
+		<file name="png_icon4" path="image\icon\4.png" />
+		<file name="png_icon5" path="image\icon\5.png" />
+		<file name="png_icon6" path="image\icon\6.png" />
+		<file name="png_icon7" path="image\icon\7.png" />
+		<file name="img_busy" path="image\img_busy.png" />
+	</IMGX>
+	<IMG>
+		<!--托盘菜单图标-->
+		<file name="traymenu_icons" path="image\traymenu_icons.png"/>
+	</IMG>
+	<SMENU>
+		<file name="menu_tray" path="xml\menu_tray.xml"/>
+		<file name="menu_snapshot_arrow" path="xml\menus\menu_snapshot_arrow.xml" />
+		<file name="menu_send_richeidt"  path="xml\menus\send_richeidt_menu.xml"  />
+		<file name="menu_recv_richeidt"  path="xml\menus\recv_richeidt_menu.xml"  />
+		<file name="menu_lasttalk_list"  path="xml\IMXml\menus\menu_lasttalk.xml" />
+		<file name="menu_contact_list"   path="xml\menus\menu_contactlist.xml" />
+	</SMENU>
+</resource>

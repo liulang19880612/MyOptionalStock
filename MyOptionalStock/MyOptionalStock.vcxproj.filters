@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="聊天工具">
+      <UniqueIdentifier>{9cff99cc-e9a6-40ec-9325-3912973b9eef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="扩展皮肤">
+      <UniqueIdentifier>{95f64b1b-1563-4303-8dda-a7f441f5f8a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="扩展控件">
+      <UniqueIdentifier>{3750cc0b-3390-425c-906f-705af1842f1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="图表">
+      <UniqueIdentifier>{cf79520a-fefd-4842-a315-5873a668e767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="键盘精灵">
+      <UniqueIdentifier>{7376bb2d-8ae4-4936-b232-538e046cca30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="工具函数">
+      <UniqueIdentifier>{0e445151-81f4-4c51-b59a-a358cb3e2704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="聊天工具\最新聊天处理">
+      <UniqueIdentifier>{db1e18f8-61ae-4fa3-be07-69b823ab6dcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="聊天工具\联系人管理">
+      <UniqueIdentifier>{8c4065c0-0abd-4a40-a57f-4a334383166e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="富文本框">
+      <UniqueIdentifier>{07158e16-244c-4e31-bb3a-ddec1ff9267b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gif">
+      <UniqueIdentifier>{6789bf06-0383-4532-8022-001f901d397d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="扩展事件">
+      <UniqueIdentifier>{2b05eaba-0908-49c5-8a72-f6a216b7c051}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="异步任务">
+      <UniqueIdentifier>{f4e927f1-b5fc-4df6-9391-52323a8fdddf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="聊天工具\表情选择框">
+      <UniqueIdentifier>{44700455-f07d-4e74-95ef-89bb9424152d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="网络模块">
+      <UniqueIdentifier>{e6bdc97b-6175-4006-97d9-f2a1aa792873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="聊天工具\截图功能">
+      <UniqueIdentifier>{22ded746-039e-4693-afde-04779ca99851}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyOptionalStock.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternSkins\SVscrollbar.h">
+      <Filter>扩展皮肤</Filter>
+    </ClInclude>
+    <ClInclude Include="PageImplBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\DragView.h">
+      <Filter>扩展控件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\GridHeaderCtrl.h">
+      <Filter>扩展控件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\GridCtrl.h">
+      <Filter>扩展控件</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\IMChartDlg.h">
+      <Filter>聊天工具</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternSkins\ExtendSkins.h">
+      <Filter>扩展皮肤</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternSkins\SAntialiasSkin.h">
+      <Filter>扩展皮肤</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardWizardDlg.h">
+      <Filter>键盘精灵</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>工具函数</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\SGroupList.h">
+      <Filter>扩展控件</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalUnits.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\LastTalkImpl.h">
+      <Filter>聊天工具\最新聊天处理</Filter>
+    </ClInclude>
+    <ClInclude Include="QuoteListImpl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuWrapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\ContactImpl.h">
+      <Filter>聊天工具\联系人管理</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\ClipboardConverter.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\dataobject.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\HTMLParser.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\HTTPDownloader.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\ImgProvider.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\IRichEditObjHost.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\RichEditObj.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\RichEditObjEvents.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\RichEditObjFactory.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\RichEditOleBase.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\RichEditOleCallback.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\RichEditOleCtrls.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\RichEditUnitConverter.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\imre\SImRichEdit.h">
+      <Filter>富文本框</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\gif\SAniImgFrame.h">
+      <Filter>gif</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\gif\SGifPlayer.h">
+      <Filter>gif</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\gif\SSkinAPNG.h">
+      <Filter>gif</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\gif\SSkinGif.h">
+      <Filter>gif</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\ExtendCtrls.h">
+      <Filter>扩展控件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\SButtonEx.h">
+      <Filter>扩展控件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\SImageView.h">
+      <Filter>扩展控件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\SSplitBar.h">
+      <Filter>扩展控件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternEvent\ExtendEvents.h">
+      <Filter>扩展事件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\SeriesData.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\CandleChart.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\ChartCtrl.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\ChartTitleCtrl.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\Axis.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\AxisChart.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\DynaChart.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\KChart.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\RectChart.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\ShapeChart.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\SeriesObject.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\TimeAxis.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\Shape.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\ShapeFactory.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\ShapePen.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\TipButton.h">
+      <Filter>图表</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\EmojiDlg.h">
+      <Filter>聊天工具\表情选择框</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\Snapshot\CBitmap.h">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\Snapshot\CEdit9527.h">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\Snapshot\CGdiDc.h">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\Snapshot\CPixelateGrid.h">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\Snapshot\CWindowEnumer.h">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\Snapshot\IWordSizeAdapterCallback.h">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\Snapshot\SnapshotDlg.h">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\Snapshot\SSnapshotCtrl.h">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClInclude>
+    <ClInclude Include="IMChart\Snapshot\WordSizeAdapter.h">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyOptionalStock.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PageImplBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\DragView.cpp">
+      <Filter>扩展控件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\GridHeaderCtrl.cpp">
+      <Filter>扩展控件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\GridCtrl.cpp">
+      <Filter>扩展控件</Filter>
+    </ClCompile>
+    <ClCompile Include="IMChart\IMChartDlg.cpp">
+      <Filter>聊天工具</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternSkins\ExtendSkins.cpp">
+      <Filter>扩展皮肤</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternSkins\SAntialiasSkin.cpp">
+      <Filter>扩展皮肤</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardWizardDlg.cpp">
+      <Filter>键盘精灵</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>工具函数</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\SGroupList.cpp">
+      <Filter>扩展控件</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalUnits.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IMChart\LastTalkImpl.cpp">
+      <Filter>聊天工具\最新聊天处理</Filter>
+    </ClCompile>
+    <ClCompile Include="QuoteListImpl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuWrapper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IMChart\ContactImpl.cpp">
+      <Filter>聊天工具\联系人管理</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\ClipboardConverter.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\dataobject.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\HTMLParser.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\HTTPDownloader.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\ImgProvider.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\RichEditObj.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\RichEditObjFactory.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\RichEditOleBase.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\RichEditOleCallback.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\RichEditOleCtrls.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\RichEditUnitConverter.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\imre\SImRichedit.cpp">
+      <Filter>富文本框</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\gif\SGifPlayer.cpp">
+      <Filter>gif</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\gif\SSkinAPNG.cpp">
+      <Filter>gif</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\gif\SSkinGif.cpp">
+      <Filter>gif</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\ExtendCtrls.cpp">
+      <Filter>扩展控件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\SButtonEx.cpp">
+      <Filter>扩展控件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\SImageView.cpp">
+      <Filter>扩展控件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\SplitBar.cpp">
+      <Filter>扩展控件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\ChartCtrl.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\ChartTitleCtrl.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\Axis.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\AxisChart.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\DynaChart.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\KChart.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\RectChart.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\ShapeChart.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\SeriesObject.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\CandleChart.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\TimeAxis.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\Shape.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\ShapeFactory.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\ShapePen.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\TipButton.cpp">
+      <Filter>图表</Filter>
+    </ClCompile>
+    <ClCompile Include="IMChart\EmojiDlg.cpp">
+      <Filter>聊天工具\表情选择框</Filter>
+    </ClCompile>
+    <ClCompile Include="IMChart\Snapshot\CEdit9527.cpp">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClCompile>
+    <ClCompile Include="IMChart\Snapshot\CWindowEnumer.cpp">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClCompile>
+    <ClCompile Include="IMChart\Snapshot\SnapshotDlg.cpp">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClCompile>
+    <ClCompile Include="IMChart\Snapshot\SSnapshotCtrl.cpp">
+      <Filter>聊天工具\截图功能</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
