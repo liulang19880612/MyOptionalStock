@@ -65,20 +65,24 @@
       <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy /y   $(ProjectDir)..\..\bin\render-gdid.dll   $(ProjectDir)..\output\bin\render-gdid.dll
-xcopy /y   $(ProjectDir)..\..\bin\log4zd.dll   $(ProjectDir)..\output\bin\log4zd.dll
-xcopy /y   $(ProjectDir)..\..\bin\resprovider-7zipd.dll   $(ProjectDir)..\output\bin\resprovider-7zipd.dll
-xcopy /y   $(ProjectDir)..\..\bin\resprovider-zipd.dll   $(ProjectDir)..\output\bin\resprovider-zipd.dll
-xcopy /y   $(ProjectDir)..\..\bin\scriptmodule-luad.dll   $(ProjectDir)..\output\bin\scriptmodule-luad.dll
-xcopy /y   $(ProjectDir)..\..\bin\SIpcObjectd.dll   $(ProjectDir)..\output\bin\SIpcObjectd.dll
-xcopy /y   $(ProjectDir)..\..\bin\souid.dll   $(ProjectDir)..\output\bin\souid.dll
-xcopy /y   $(ProjectDir)..\..\bin\TaskLoopd.dll   $(ProjectDir)..\output\bin\TaskLoopd.dll
-xcopy /y   $(ProjectDir)..\..\bin\translatord.dll   $(ProjectDir)..\output\bin\translatord.dll
-xcopy /y   $(ProjectDir)..\..\bin\utilitiesd.dll   $(ProjectDir)..\output\bin\utilitiesd.dll
-xcopy /y   /F   $(ProjectDir)..\..\bin\scintillad.lib   $(ProjectDir)..\output\lib\scintillad.lib
-xcopy /y   /F   $(ProjectDir)..\..\bin\zlibd.lib   $(ProjectDir)..\output\lib\zlibd.lib
-xcopy  /y  /F   $(ProjectDir)..\..\bin\utilitiesd.lib   $(ProjectDir)..\output\lib\utilitiesd.lib
-xcopy  /y  /F   $(ProjectDir)..\..\bin\souid.lib   $(ProjectDir)..\output\lib\souid.lib
+      <Command>echo f| xcopy /y   $(ProjectDir)..\..\bin\render-gdid.dll   $(ProjectDir)..\output\bin\render-gdid.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\log4zd.dll   $(ProjectDir)..\output\bin\log4zd.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\resprovider-7zipd.dll   $(ProjectDir)..\output\bin\resprovider-7zipd.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\resprovider-zipd.dll   $(ProjectDir)..\output\bin\resprovider-zipd.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\scriptmodule-luad.dll   $(ProjectDir)..\output\bin\scriptmodule-luad.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\SIpcObjectd.dll   $(ProjectDir)..\output\bin\SIpcObjectd.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\souid.dll   $(ProjectDir)..\output\bin\souid.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\TaskLoopd.dll   $(ProjectDir)..\output\bin\TaskLoopd.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\translatord.dll   $(ProjectDir)..\output\bin\translatord.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\utilitiesd.dll   $(ProjectDir)..\output\bin\utilitiesd.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\soui-sys-resourced.dll   $(ProjectDir)..\output\bin\soui-sys-resourced.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\imgdecoder-gdipd.dll   $(ProjectDir)..\output\bin\imgdecoder-gdipd.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\imgdecoder-wicd.dll   $(ProjectDir)..\output\bin\imgdecoder-wicd.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\imgdecoder-stbd.dll   $(ProjectDir)..\output\bin\imgdecoder-stbd.dll
+echo f| xcopy /y   $(ProjectDir)..\..\bin\scintillad.lib   $(ProjectDir)..\output\lib\scintillad.lib
+echo f| xcopy /y   $(ProjectDir)..\..\bin\zlibd.lib   $(ProjectDir)..\output\lib\zlibd.lib
+echo f| xcopy  /y  $(ProjectDir)..\..\bin\utilitiesd.lib   $(ProjectDir)..\output\lib\utilitiesd.lib
+echo f| xcopy  /y  $(ProjectDir)..\..\bin\souid.lib   $(ProjectDir)..\output\lib\souid.lib
 
 
 
