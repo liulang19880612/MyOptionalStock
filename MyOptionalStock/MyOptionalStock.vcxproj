@@ -65,19 +65,22 @@
       <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy  /y   $(ProjectDir)..\..\..\bin\render-gdid.dll   $(ProjectDir)..\output\bin\render-gdid.dll
-xcopy  /y   $(ProjectDir)..\..\..\bin\log4zd.dll   $(ProjectDir)..\output\bin\log4zd.dll
-xcopy  /y   $(ProjectDir)..\..\..\bin\resprovider-7zipd.dll   $(ProjectDir)..\output\bin\resprovider-7zipd.dll
-xcopy  /y   $(ProjectDir)..\..\..\bin\resprovider-zipd.dll   $(ProjectDir)..\output\bin\resprovider-zipd.dll
-xcopy  /y /f   $(ProjectDir)..\..\..\bin\scintillad.lib   $(ProjectDir)..\output\lib\scintillad.lib
-xcopy  /y /f   $(ProjectDir)..\..\..\bin\scriptmodule-luad.dll   $(ProjectDir)..\output\bin\scriptmodule-luad.dll
-xcopy  /y   $(ProjectDir)..\..\..\bin\SIpcObjectd.dll   $(ProjectDir)..\output\bin\SIpcObjectd.dll
-xcopy  /y   $(ProjectDir)..\..\..\bin\souid.dll   $(ProjectDir)..\output\bin\souid.dll
-xcopy  /y   $(ProjectDir)..\..\..\bin\TaskLoopd.dll   $(ProjectDir)..\output\bin\TaskLoopd.dll
-xcopy  /y   $(ProjectDir)..\..\..\bin\translatord.dll   $(ProjectDir)..\output\bin\translatord.dll
-xcopy  /y   $(ProjectDir)..\..\..\bin\utilitiesd.dll   $(ProjectDir)..\output\bin\utilitiesd.dll
-xcopy  /y   /f  $(ProjectDir)..\..\..\bin\zlibd.lib   $(ProjectDir)..\output\lib\zlibd.lib
-xcopy  /y    /f $(ProjectDir)..\..\..\bin\utilitiesd.lib   $(ProjectDir)..\output\lib\utilitiesd.lib
+      <Command>xcopy /y   $(ProjectDir)..\..\..\bin\render-gdid.dll   $(ProjectDir)..\output\bin\render-gdid.dll
+xcopy /y   $(ProjectDir)..\..\..\bin\log4zd.dll   $(ProjectDir)..\output\bin\log4zd.dll
+xcopy /y   $(ProjectDir)..\..\..\bin\resprovider-7zipd.dll   $(ProjectDir)..\output\bin\resprovider-7zipd.dll
+xcopy /y   $(ProjectDir)..\..\..\bin\resprovider-zipd.dll   $(ProjectDir)..\output\bin\resprovider-zipd.dll
+xcopy /y   $(ProjectDir)..\..\..\bin\scriptmodule-luad.dll   $(ProjectDir)..\output\bin\scriptmodule-luad.dll
+xcopy /y   $(ProjectDir)..\..\..\bin\SIpcObjectd.dll   $(ProjectDir)..\output\bin\SIpcObjectd.dll
+xcopy /y   $(ProjectDir)..\..\..\bin\souid.dll   $(ProjectDir)..\output\bin\souid.dll
+xcopy /y   $(ProjectDir)..\..\..\bin\TaskLoopd.dll   $(ProjectDir)..\output\bin\TaskLoopd.dll
+xcopy /y   $(ProjectDir)..\..\..\bin\translatord.dll   $(ProjectDir)..\output\bin\translatord.dll
+xcopy /y   $(ProjectDir)..\..\..\bin\utilitiesd.dll   $(ProjectDir)..\output\bin\utilitiesd.dll
+xcopy /y   /F   $(ProjectDir)..\..\..\bin\scintillad.lib   $(ProjectDir)..\output\lib\scintillad.lib
+xcopy /y  /F   $(ProjectDir)..\..\..\bin\zlibd.lib   $(ProjectDir)..\output\lib\zlibd.lib
+xcopy  /y  /F   $(ProjectDir)..\..\..\bin\utilitiesd.lib   $(ProjectDir)..\output\lib\utilitiesd.lib
+
+
+
 
 </Command>
     </PreBuildEvent>

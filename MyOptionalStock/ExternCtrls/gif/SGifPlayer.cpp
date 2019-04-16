@@ -8,7 +8,7 @@ namespace SOUI
 
 SGifPlayer::SGifPlayer() :m_aniSkin(NULL), m_iCurFrame(0),m_nNextInterval(0)
 {
-
+	 
 }
 
 SGifPlayer::~SGifPlayer()
