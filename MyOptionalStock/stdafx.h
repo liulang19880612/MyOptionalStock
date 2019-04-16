@@ -25,14 +25,6 @@
 #include <Imm.h>
 #pragma comment(lib, "imm32.lib")
 
-#define CHAIN_EVENT_MAP_MEMBER_PTR(theChainMember)                     \
-			    {                                                      \
-    if(theChainMember && theChainMember->_HandleEvent(pEvt))           \
-        return TRUE;                                                   \
-			    }
-
-
-
 using namespace SOUI;
 #include <math.h>
 #include <GdiPlus.h>
@@ -41,3 +33,10 @@ using namespace Gdiplus;
 #ifndef _Post_writable_byte_size_
 #define _Post_writable_byte_size_(s)
 #endif
+
+
+//<--定一个filter="demo"的slog输出
+#undef LOG_FILTER
+#define LOG_FILTER "HelloWorld"
+#include <helper/slog-def.h>
+//-->

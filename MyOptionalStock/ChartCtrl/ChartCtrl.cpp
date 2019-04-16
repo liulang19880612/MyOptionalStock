@@ -1365,7 +1365,7 @@ void CChartCtrl::OnMouseLeave()
 	if (!m_cursorRc.IsRectEmpty())
 	{
 		CRect tmp(m_cursorRc);
-		//ScreenToClient(GetContainer()->GetHostHwnd(),&tmp);
+		::ScreenToClient(GetContainer()->GetHostHwnd(), (LPPOINT)&tmp);
 		pt.x = tmp.left > pt.x ? tmp.left : pt.x;
 		pt.x = tmp.right < pt.x ? tmp.right : pt.x;
 		pt.y = tmp.top > pt.y ? tmp.top : pt.y;

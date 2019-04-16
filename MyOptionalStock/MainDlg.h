@@ -36,7 +36,7 @@ protected:
 		EVENT_NAME_COMMAND(L"btn_max", OnMaximize)
 		EVENT_NAME_COMMAND(L"btn_restore", OnRestore)
 		EVENT_NAME_COMMAND(L"btn_im_chart", OnImChart)
-		CHAIN_EVENT_MAP_MEMBER_PTR(m_pQuoteListImpl)
+		CHAIN_EVENT_MAP_MEMBER((*m_pQuoteListImpl))
 	EVENT_MAP_END()
 
 	//HostWnd真实窗口消息处理

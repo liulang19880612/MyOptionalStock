@@ -88,9 +88,24 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 		//处理汉字拼音对照表
 		CGlobalUnits::GetInstance()->OperatePinyinMap(strPYMapPath);
 		CGlobalUnits::GetInstance()->OperateSerachIndex();
-
+		// 初始化表情包
 		CGlobalUnits::GetInstance()->OperateEmojis();
-
+		
+		
+		// 初始化日志模块
+		CAutoRefPtr<ILog4zManager>  pLogMgr;                //log4z对象
+		pComMgr->CreateLog4z((IObjRef**)&pLogMgr);
+		SASSERT("日志模块初始化失败");
+		if (pLogMgr)
+		{
+			pLogMgr->createLogger("我的自选股");
+			pLogMgr->start();
+			theApp->SetLogManager(pLogMgr);
+			SLOG_INFO("test=" << 200);
+			SLOGFMTE("log output using ansi format,str=%s, tick=%u", "test", GetTickCount());
+			SLOGFMTE(L"log output using unicode format,str=%s, tick=%u", L"中文日志", GetTickCount());
+		}
+		
 // 		if (trans)
 // 		{//加载语言翻译包
 // 			theApp->SetTranslator(trans);
@@ -134,6 +149,10 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 			nRet = theApp->Run(dlgMain.m_hWnd);
 		}
 		delete theApp;
+		if (pLogMgr)
+		{
+			pLogMgr->stop();
+		}
 	}
 	delete pComMgr;
 	OleUninitialize();

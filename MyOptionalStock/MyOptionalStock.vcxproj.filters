@@ -22,9 +22,6 @@
     <Filter Include="扩展控件">
       <UniqueIdentifier>{3750cc0b-3390-425c-906f-705af1842f1c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="图表">
-      <UniqueIdentifier>{cf79520a-fefd-4842-a315-5873a668e767}</UniqueIdentifier>
-    </Filter>
     <Filter Include="键盘精灵">
       <UniqueIdentifier>{7376bb2d-8ae4-4936-b232-538e046cca30}</UniqueIdentifier>
     </Filter>
@@ -57,6 +54,9 @@
     </Filter>
     <Filter Include="聊天工具\截图功能">
       <UniqueIdentifier>{22ded746-039e-4693-afde-04779ca99851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="K线控件">
+      <UniqueIdentifier>{cf79520a-fefd-4842-a315-5873a668e767}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -190,52 +190,49 @@
       <Filter>扩展事件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\SeriesData.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\CandleChart.h">
-      <Filter>图表</Filter>
-    </ClInclude>
-    <ClInclude Include="ChartCtrl\ChartCtrl.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\ChartTitleCtrl.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\Axis.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\AxisChart.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\DynaChart.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\KChart.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\RectChart.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\ShapeChart.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\SeriesObject.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\TimeAxis.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\Shape.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\ShapeFactory.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\ShapePen.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="ChartCtrl\TipButton.h">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClInclude>
     <ClInclude Include="IMChart\EmojiDlg.h">
       <Filter>聊天工具\表情选择框</Filter>
@@ -266,6 +263,9 @@
     </ClInclude>
     <ClInclude Include="IMChart\Snapshot\WordSizeAdapter.h">
       <Filter>聊天工具\截图功能</Filter>
+    </ClInclude>
+    <ClInclude Include="ChartCtrl\ChartCtrl.h">
+      <Filter>K线控件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -380,50 +380,47 @@
     <ClCompile Include="ExternCtrls\SplitBar.cpp">
       <Filter>扩展控件</Filter>
     </ClCompile>
-    <ClCompile Include="ChartCtrl\ChartCtrl.cpp">
-      <Filter>图表</Filter>
-    </ClCompile>
     <ClCompile Include="ChartCtrl\ChartTitleCtrl.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\Axis.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\AxisChart.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\DynaChart.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\KChart.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\RectChart.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\ShapeChart.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\SeriesObject.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\CandleChart.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\TimeAxis.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\Shape.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\ShapeFactory.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\ShapePen.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="ChartCtrl\TipButton.cpp">
-      <Filter>图表</Filter>
+      <Filter>K线控件</Filter>
     </ClCompile>
     <ClCompile Include="IMChart\EmojiDlg.cpp">
       <Filter>聊天工具\表情选择框</Filter>
@@ -439,6 +436,9 @@
     </ClCompile>
     <ClCompile Include="IMChart\Snapshot\SSnapshotCtrl.cpp">
       <Filter>聊天工具\截图功能</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\ChartCtrl.cpp">
+      <Filter>K线控件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
