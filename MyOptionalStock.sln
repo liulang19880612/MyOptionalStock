@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "基础库", "基础库", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI库", "UI库", "{C0EC2738-13C6-4DE5-B21D-E8783BFC6DFD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "soui", "..\..\SOUI\soui.vcxproj", "{28113C9B-0215-37C8-8068-64A4A82AB8E6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "soui", "..\SOUI\soui.vcxproj", "{28113C9B-0215-37C8-8068-64A4A82AB8E6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0F419416-2581-3BE0-BAE7-AA36DF4FBEFA} = {0F419416-2581-3BE0-BAE7-AA36DF4FBEFA}
 		{C45B5E3E-51FA-34ED-978E-0D1ABC36AC00} = {C45B5E3E-51FA-34ED-978E-0D1ABC36AC00}
@@ -32,33 +32,33 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "soui", "..\..\SOUI\soui.vcx
 		{6AD9BAF3-DCCB-3AD4-8652-DB5CFCD6291C} = {6AD9BAF3-DCCB-3AD4-8652-DB5CFCD6291C}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "render-gdi", "..\..\components\render-gdi\render-gdi.vcxproj", "{E05B6470-E4E5-3506-8733-5D51BA279593}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "render-gdi", "..\components\render-gdi\render-gdi.vcxproj", "{E05B6470-E4E5-3506-8733-5D51BA279593}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "render-skia", "..\..\components\render-skia\render-skia.vcxproj", "{6AD9BAF3-DCCB-3AD4-8652-DB5CFCD6291C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "render-skia", "..\components\render-skia\render-skia.vcxproj", "{6AD9BAF3-DCCB-3AD4-8652-DB5CFCD6291C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgdecoder-stb", "..\..\components\imgdecoder-stb\imgdecoder-stb.vcxproj", "{C45B5E3E-51FA-34ED-978E-0D1ABC36AC00}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgdecoder-stb", "..\components\imgdecoder-stb\imgdecoder-stb.vcxproj", "{C45B5E3E-51FA-34ED-978E-0D1ABC36AC00}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgdecoder-gdip", "..\..\components\imgdecoder-gdip\imgdecoder-gdip.vcxproj", "{0F419416-2581-3BE0-BAE7-AA36DF4FBEFA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgdecoder-gdip", "..\components\imgdecoder-gdip\imgdecoder-gdip.vcxproj", "{0F419416-2581-3BE0-BAE7-AA36DF4FBEFA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgdecoder-png", "..\..\components\imgdecoder-png\imgdecoder-png.vcxproj", "{07771944-AD1A-32E1-99D4-9F68F40906F7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgdecoder-png", "..\components\imgdecoder-png\imgdecoder-png.vcxproj", "{07771944-AD1A-32E1-99D4-9F68F40906F7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgdecoder-wic", "..\..\components\imgdecoder-wic\imgdecoder-wic.vcxproj", "{B53BB489-223F-3A07-960C-7661EB987987}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgdecoder-wic", "..\components\imgdecoder-wic\imgdecoder-wic.vcxproj", "{B53BB489-223F-3A07-960C-7661EB987987}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "log4z", "..\..\components\log4z\log4z.vcxproj", "{9C6B8629-BC11-3362-B248-D2BEB6F8247D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "log4z", "..\components\log4z\log4z.vcxproj", "{9C6B8629-BC11-3362-B248-D2BEB6F8247D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "日志模块", "日志模块", "{9430035E-DB62-432C-ACDE-CE1995958925}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "scriptmodule-lua", "..\..\components\ScriptModule-LUA\scriptmodule-lua.vcxproj", "{A9B77FF7-85AC-3972-A1B7-B26E35755DBF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "scriptmodule-lua", "..\components\ScriptModule-LUA\scriptmodule-lua.vcxproj", "{A9B77FF7-85AC-3972-A1B7-B26E35755DBF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "resprovider-zip", "..\..\components\resprovider-zip\resprovider-zip.vcxproj", "{65E02794-1C31-351B-AB7F-18751D3B9112}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "resprovider-zip", "..\components\resprovider-zip\resprovider-zip.vcxproj", "{65E02794-1C31-351B-AB7F-18751D3B9112}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TaskLoop", "..\..\components\TaskLoop\TaskLoop.vcxproj", "{9F3B0340-059D-35E1-9388-512A51CAB1D6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TaskLoop", "..\components\TaskLoop\TaskLoop.vcxproj", "{9F3B0340-059D-35E1-9388-512A51CAB1D6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "translator", "..\..\components\translator\translator.vcxproj", "{025A9887-9790-3EF8-B5ED-42B3D8E7861F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "translator", "..\components\translator\translator.vcxproj", "{025A9887-9790-3EF8-B5ED-42B3D8E7861F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SIpcObject", "..\..\components\SIpcObject\SIpcObject.vcxproj", "{B7BBF266-E337-32CF-84A0-6ABAC8A045F2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SIpcObject", "..\components\SIpcObject\SIpcObject.vcxproj", "{B7BBF266-E337-32CF-84A0-6ABAC8A045F2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "resprovider-7zip", "..\..\components\resprovider-7zip\resprovider-7zip.vcxproj", "{401571D5-69BD-36AD-9BB4-18354E4C29C1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "resprovider-7zip", "..\components\resprovider-7zip\resprovider-7zip.vcxproj", "{401571D5-69BD-36AD-9BB4-18354E4C29C1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "压缩", "压缩", "{BD9E2252-DCAD-49CB-80B8-122BAD4EB824}"
 EndProject
@@ -74,15 +74,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "异步任务", "异步任�
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IPC", "IPC", "{8A21A569-DAE1-45B8-864B-20390127A682}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "utilities", "..\..\utilities\utilities.vcxproj", "{9818315E-023B-3F92-98FA-5E987E1E9E4F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "utilities", "..\utilities\utilities.vcxproj", "{9818315E-023B-3F92-98FA-5E987E1E9E4F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7z", "..\..\third-part\7z\7z.vcxproj", "{69DEC9C9-0CFE-3A0E-9DEE-1B10DB6CFA7F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7z", "..\third-part\7z\7z.vcxproj", "{69DEC9C9-0CFE-3A0E-9DEE-1B10DB6CFA7F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "..\..\third-part\zlib\zlib.vcxproj", "{F89BDB5C-C2F2-3B0C-9F4C-A45BDC13FBC7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "..\third-part\zlib\zlib.vcxproj", "{F89BDB5C-C2F2-3B0C-9F4C-A45BDC13FBC7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua-52", "..\..\third-part\lua-52\lua-52.vcxproj", "{93ED030D-007E-3059-B20D-F89F0AA5D592}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua-52", "..\third-part\lua-52\lua-52.vcxproj", "{93ED030D-007E-3059-B20D-F89F0AA5D592}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "png", "..\..\third-part\png\png.vcxproj", "{FDBC7EBD-1AB4-3CBD-B0F4-0B830CD18443}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "png", "..\third-part\png\png.vcxproj", "{FDBC7EBD-1AB4-3CBD-B0F4-0B830CD18443}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
