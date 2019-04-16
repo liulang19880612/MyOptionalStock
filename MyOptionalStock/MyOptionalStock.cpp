@@ -18,6 +18,7 @@
 #include "IMChart/Snapshot/SSnapshotCtrl.h"
 
 
+
 #include "GlobalUnits.h"
 
 
@@ -27,11 +28,36 @@
 #define SYS_NAMED_RESOURCE _T("soui-sys-resource.dll")
 #endif
 
+//演示异步任务。
+class CAsyncTaskObj
+{
+public:
+	void task1(int a)
+	{
+		SLOG_INFO("task1,a:" << a);
+	}
+
+	void task2(int a, const std::string & b)
+	{
+		SLOG_INFO("task2,a:" << a << " b:" << b.c_str());
+	}
+};
+
+#include <iostream>
+using namespace std;
 int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPTSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
+	// 召唤控制台
+#ifdef DEBUG
+	AllocConsole();
+	freopen("conout$", "w", stdout);
+#endif 
+	Sleep(4000);
+	printf("Hello World111111111111/r/rn");
+	std::cout << "Hello World" << std::endl;
 	// OLE初始化
 	HRESULT hRes = OleInitialize(NULL);
 	SASSERT(SUCCEEDED(hRes));
@@ -102,11 +128,20 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 			pLogMgr->start();
 			theApp->SetLogManager(pLogMgr);
 			// 这里不能马上进行日志输出   日志线程没还启动起来。 
-			SLOG_INFO("test= 10000123123");
-			SLOGFMTE("log output using ansi format,str=%s, tick=%u", "test", GetTickCount());
-			SLOGFMTE(L"log output using unicode format,str=%s, tick=%u", L"中文日志", GetTickCount());
+			// SLOG_INFO("test= 10000123123");
+			// SLOGFMTE("log output using ansi format,str=%s, tick=%u", "test", GetTickCount());
+			// SLOGFMTE(L"log output using unicode format,str=%s, tick=%u", L"中文日志", GetTickCount());
 		}
-		
+
+		//演示异步任务。
+		CAutoRefPtr<ITaskLoop>  pTaskLoop;
+		if (pComMgr->CreateTaskLoop((IObjRef**)&pTaskLoop))
+		{
+			CAsyncTaskObj obj;
+			pTaskLoop->start("test", ITaskLoop::Low);
+			STaskHelper::post(pTaskLoop, &obj, &CAsyncTaskObj::task1, 100, true);
+			STaskHelper::post(pTaskLoop, &obj, &CAsyncTaskObj::task2, 100, "abc", true);
+		}
 // 		if (trans)
 // 		{//加载语言翻译包
 // 			theApp->SetTranslator(trans);
@@ -153,6 +188,11 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 		if (pLogMgr)
 		{
 			pLogMgr->stop();
+		}
+		if (pTaskLoop)
+		{
+			pTaskLoop->stop();		
+			pTaskLoop = NULL;
 		}
 	}
 	delete pComMgr;

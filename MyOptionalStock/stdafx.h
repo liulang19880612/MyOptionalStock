@@ -14,6 +14,8 @@
 #include <event/NotifyCenter.h>
 #include <helper/SAdapterBase.h>
 #include <layout/SouiLayout.h>
+#include <interface/STaskLoop-i.h>
+#include <helper/SFunctor.hpp>
  
 #include <map>
 #include <vector>
