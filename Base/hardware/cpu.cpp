@@ -12,8 +12,7 @@
  *	Brief		cpu description
  *
  */
-#include "stdafx.h"
-#include "Base.h"
+
 #include "cpu.h"
 #include <string.h>
 
@@ -24,7 +23,7 @@
 #endif
 
 
-namespace llbase
+namespace nbase
 {
 
 CPU::CPU()

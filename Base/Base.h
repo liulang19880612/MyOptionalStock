@@ -1,13 +1,37 @@
-// 下列 ifdef 块是创建使从 DLL 导出更简单的
-// 宏的标准方法。此 DLL 中的所有文件都是用命令行上定义的 BASE_EXPORTS
-// 符号编译的。在使用此 DLL 的
-// 任何其他项目上不应定义此符号。这样，源文件中包含此文件的任何其他项目都会将
-// BASE_API 函数视为是从 DLL 导入的，而此 DLL 则将用此宏定义的
-// 符号视为是被导出的。
-#ifdef BASE_EXPORTS
-#define BASE_API __declspec(dllexport)
-#else
-#define BASE_API __declspec(dllimport)
-#endif
+#pragma once
 
-#include "./hardware/cpu.h"
+#include "macros.h"
+#include "base_types.h"
+
+#include "callback/callback.h"
+#include "encrypt/des.h"
+#include "encrypt/encrypt.h"
+#include "encrypt/encrypt_impl.h"
+#include "file/file_path.h"
+#include "file/file_util.h"
+#include "framework/task.h"
+#include "hardware/cpu.h"
+#include "memory/blockbuffer.h"
+#include "memory/deleter.h"
+#include "memory/singleton.h"
+#include "memory/lazy_instance.h"
+#include "network/network_util.h"
+#include "network/nio_base.h"
+#include "synchronization/lock.h"
+#include "thread/thread_manager.h"
+#include "time/time.h"
+#include "util/at_exit.h"
+#include "util/base64.h"
+#include "util/cmd_line_args.h"
+#include "util/string_number_conversions.h"
+#include "util/string_util.h"
+#include "util/template_util.h"
+#include "util/unicode.h"
+#include "util/valuemap.h"
+#include "win32/object_watcher.h"
+#include "win32/path_util.h"
+#include "win32/platform_string_util.h"
+#include "win32/scoped_win_handle.h"
+#include "win32/security_util.h"
+#include "win32/shared_memory.h"
+#include "win32/win_util.h"
