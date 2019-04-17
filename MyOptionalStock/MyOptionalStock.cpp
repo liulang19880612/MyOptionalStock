@@ -16,7 +16,8 @@
 #include "ChartCtrl/ChartCtrl.h"
 #include "ChartCtrl/ChartTitleCtrl.h"
 #include "IMChart/Snapshot/SSnapshotCtrl.h"
-
+#include "ExternCtrls/miniblink/SMiniBlink.h"
+#include "ExternCtrls/miniblink/wkedefine.h"
 
 
 #include "GlobalUnits.h"
@@ -132,6 +133,12 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 			// SLOGFMTE("log output using ansi format,str=%s, tick=%u", "test", GetTickCount());
 			// SLOGFMTE(L"log output using unicode format,str=%s, tick=%u", L"中文日志", GetTickCount());
 		}
+
+
+		// mb
+		SWkeLoader wkeLoader;
+		theApp->RegisterWindowClass<SWkeWebkit>();
+
 
 		//演示异步任务。
 		CAutoRefPtr<ITaskLoop>  pTaskLoop;
