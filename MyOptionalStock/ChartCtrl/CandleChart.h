@@ -63,7 +63,7 @@ struct ColorSet
 	float fAxis_Y_Zoom;
 	long clrIndicator[16];		//16指标线颜色
 	
-	SOUI::IFont*          ftAxis;
+	CAutoRefPtr<SOUI::IFont>         ftAxis;
 };
 
 

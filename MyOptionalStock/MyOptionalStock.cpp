@@ -175,6 +175,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 		SASSERT(bLoaded);
 		theApp->AddResProvider(pResProvider);
 		
+		// 事件通知
 		SNotifyCenter *pNotifyCenter = new SNotifyCenter;
 		{
 			CMainDlg dlgMain;

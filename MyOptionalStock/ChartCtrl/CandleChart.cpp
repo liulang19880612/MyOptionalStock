@@ -12,9 +12,9 @@ ColorSet*               ES_Color(){
 	g_clrSet.clrTxtUp = RGBA(255, 50, 50, 255);   // ◊¯±Í÷·…œ’« 
 	g_clrSet.clrDynaLine = RGBA(255, 255, 255, 255);
 	g_clrSet.clrDynaLine2 = RGBA(192, 192, 0, 255);
-	g_clrSet.clrDynaLine3 = RGBA(255, 100, 255, 255);
-	
+	g_clrSet.clrDynaLine3 = RGBA(255, 100, 255, 255);	
 	g_clrSet.bShowHerzAxisLine = true;
+	g_clrSet.ftAxis = SFontPool::getSingleton().GetFont(L"face:ÀŒÃÂ,bold:0,italic:1,underline:1,strike:1,adding:10", 1);
 	return &g_clrSet; 
 }
 SStringW FormatLongInteger(SStringW strInteger)
