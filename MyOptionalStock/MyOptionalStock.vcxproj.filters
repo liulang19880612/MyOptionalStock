@@ -43,14 +43,8 @@
     <Filter Include="扩展事件">
       <UniqueIdentifier>{2b05eaba-0908-49c5-8a72-f6a216b7c051}</UniqueIdentifier>
     </Filter>
-    <Filter Include="异步任务">
-      <UniqueIdentifier>{f4e927f1-b5fc-4df6-9391-52323a8fdddf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="聊天工具\表情选择框">
       <UniqueIdentifier>{44700455-f07d-4e74-95ef-89bb9424152d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="网络模块">
-      <UniqueIdentifier>{e6bdc97b-6175-4006-97d9-f2a1aa792873}</UniqueIdentifier>
     </Filter>
     <Filter Include="聊天工具\截图功能">
       <UniqueIdentifier>{22ded746-039e-4693-afde-04779ca99851}</UniqueIdentifier>
@@ -60,6 +54,9 @@
     </Filter>
     <Filter Include="扩展控件\mb">
       <UniqueIdentifier>{703d50ff-ab10-45e5-960b-5a840c3d8902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="扩展控件\GridCtrl">
+      <UniqueIdentifier>{aa58d32f-1cfb-4094-b61c-8a78ac9e854b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -82,12 +79,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ExternCtrls\DragView.h">
-      <Filter>扩展控件</Filter>
-    </ClInclude>
-    <ClInclude Include="ExternCtrls\GridHeaderCtrl.h">
-      <Filter>扩展控件</Filter>
-    </ClInclude>
-    <ClInclude Include="ExternCtrls\GridCtrl.h">
       <Filter>扩展控件</Filter>
     </ClInclude>
     <ClInclude Include="IMChart\IMChartDlg.h">
@@ -113,9 +104,6 @@
     </ClInclude>
     <ClInclude Include="IMChart\LastTalkImpl.h">
       <Filter>聊天工具\最新聊天处理</Filter>
-    </ClInclude>
-    <ClInclude Include="QuoteListImpl.h">
-      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MenuWrapper.h">
       <Filter>头文件</Filter>
@@ -293,12 +281,6 @@
     <ClCompile Include="ExternCtrls\DragView.cpp">
       <Filter>扩展控件</Filter>
     </ClCompile>
-    <ClCompile Include="ExternCtrls\GridHeaderCtrl.cpp">
-      <Filter>扩展控件</Filter>
-    </ClCompile>
-    <ClCompile Include="ExternCtrls\GridCtrl.cpp">
-      <Filter>扩展控件</Filter>
-    </ClCompile>
     <ClCompile Include="IMChart\IMChartDlg.cpp">
       <Filter>聊天工具</Filter>
     </ClCompile>
@@ -322,9 +304,6 @@
     </ClCompile>
     <ClCompile Include="IMChart\LastTalkImpl.cpp">
       <Filter>聊天工具\最新聊天处理</Filter>
-    </ClCompile>
-    <ClCompile Include="QuoteListImpl.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="MenuWrapper.cpp">
       <Filter>源文件</Filter>

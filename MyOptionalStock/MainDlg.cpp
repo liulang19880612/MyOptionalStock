@@ -21,13 +21,13 @@ using namespace rapidjson;
 CMainDlg::CMainDlg() : SHostWnd(_T("LAYOUT:XML_MAINWND"))
 {
 	m_bLayoutInited = FALSE;
-	m_pQuoteListImpl = new CQuoteListImpl;
+
 }
 
 
 CMainDlg::~CMainDlg()
 {
-	if (m_pQuoteListImpl)delete m_pQuoteListImpl; m_pQuoteListImpl = NULL;
+	
 }
 
 int CMainDlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
@@ -142,10 +142,6 @@ BOOL CMainDlg::OnInitDialog(HWND hWnd, LPARAM lParam)
 {
 	m_bLayoutInited = TRUE;
 	//
-	if ( m_pQuoteListImpl)
-	{
-		m_pQuoteListImpl->OnInit(this);
-	}
 
 	SWkeWebkit *pWeb = FindChildByName2<SWkeWebkit>(L"wke_test");
 	SASSERT(pWeb);

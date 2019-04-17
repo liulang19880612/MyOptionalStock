@@ -34,9 +34,7 @@
 					<charttitlectrl  name="title"   margin="1,1,0,0" colorBorder="rgb(255,0,0)" backgroundskin="skin_rect_purclr"></charttitlectrl>
 				</chartctrl>
 			</page>
-			<page name="quotelist">
-				<include src="layout:XML_QUOTE_LIST"/>
-			</page>
+	
 	   </tabctrl>
      </caption>
   </root>

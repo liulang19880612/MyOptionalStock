@@ -10,8 +10,6 @@
 #include "ExternSkins/ExtendSkins.h"
 #include "ExternSkins/SAntialiasSkin.h"
 // 扩展控件
-#include "ExternCtrls/GridHeaderCtrl.h"
-#include "ExternCtrls/GridCtrl.h"
 #include "ExternCtrls/imre/SImRichEdit.h"
 #include "ChartCtrl/ChartCtrl.h"
 #include "ChartCtrl/ChartTitleCtrl.h"
@@ -56,7 +54,6 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	AllocConsole();
 	freopen("conout$", "w", stdout);
 #endif 
-	Sleep(4000);
 	printf("Hello World111111111111/r/rn");
 	std::cout << "Hello World" << std::endl;
 	// OLE初始化
@@ -100,8 +97,6 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 		theApp->RegisterSkinClass<SColorMask>();
 		theApp->RegisterSkinClass<SAntialiasSkin>();
 		// 注册扩展控件
-		theApp->RegisterWindowClass<CGridHeaderCtrl>();
-		theApp->RegisterWindowClass<CGridCtrl>();
 		theApp->RegisterWindowClass<CChartCtrl>();
 		theApp->RegisterWindowClass<CChartTitleCtrl>();
 		theApp->RegisterWindowClass<SSnapshotCtrl>();

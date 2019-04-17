@@ -133,8 +133,6 @@ echo f| xcopy  /y  $(ProjectDir)..\..\bin\souid.lib   $(ProjectDir)..\output\lib
     <ClInclude Include="ExternCtrls\gif\SGifPlayer.h" />
     <ClInclude Include="ExternCtrls\gif\SSkinAPNG.h" />
     <ClInclude Include="ExternCtrls\gif\SSkinGif.h" />
-    <ClInclude Include="ExternCtrls\GridCtrl.h" />
-    <ClInclude Include="ExternCtrls\GridHeaderCtrl.h" />
     <ClInclude Include="ExternCtrls\imre\ClipboardConverter.h" />
     <ClInclude Include="ExternCtrls\imre\dataobject.h" />
     <ClInclude Include="ExternCtrls\imre\HTMLParser.h" />
@@ -178,7 +176,6 @@ echo f| xcopy  /y  $(ProjectDir)..\..\bin\souid.lib   $(ProjectDir)..\output\lib
     <ClInclude Include="MyOptionalStock.h" />
     <ClInclude Include="MainDlg.h" />
     <ClInclude Include="PageImplBase.h" />
-    <ClInclude Include="QuoteListImpl.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
@@ -203,8 +200,6 @@ echo f| xcopy  /y  $(ProjectDir)..\..\bin\souid.lib   $(ProjectDir)..\output\lib
     <ClCompile Include="ExternCtrls\gif\SGifPlayer.cpp" />
     <ClCompile Include="ExternCtrls\gif\SSkinAPNG.cpp" />
     <ClCompile Include="ExternCtrls\gif\SSkinGif.cpp" />
-    <ClCompile Include="ExternCtrls\GridCtrl.cpp" />
-    <ClCompile Include="ExternCtrls\GridHeaderCtrl.cpp" />
     <ClCompile Include="ExternCtrls\imre\ClipboardConverter.cpp" />
     <ClCompile Include="ExternCtrls\imre\dataobject.cpp" />
     <ClCompile Include="ExternCtrls\imre\HTMLParser.cpp" />
@@ -238,7 +233,6 @@ echo f| xcopy  /y  $(ProjectDir)..\..\bin\souid.lib   $(ProjectDir)..\output\lib
     <ClCompile Include="MyOptionalStock.cpp" />
     <ClCompile Include="MainDlg.cpp" />
     <ClCompile Include="PageImplBase.cpp" />
-    <ClCompile Include="QuoteListImpl.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

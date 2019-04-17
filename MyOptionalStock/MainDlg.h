@@ -1,6 +1,5 @@
 #pragma once
 
-#include "QuoteListImpl.h"
 #include <atltime.h>
 
 class CKeyboardWizardDlg;
@@ -36,7 +35,6 @@ protected:
 		EVENT_NAME_COMMAND(L"btn_max", OnMaximize)
 		EVENT_NAME_COMMAND(L"btn_restore", OnRestore)
 		EVENT_NAME_COMMAND(L"btn_im_chart", OnImChart)
-		CHAIN_EVENT_MAP_MEMBER((*m_pQuoteListImpl))
 	EVENT_MAP_END()
 
 	//HostWnd真实窗口消息处理
@@ -56,6 +54,5 @@ protected:
 	CIMChartDlg*                    m_pIMChartDlg;         // 聊天工具
 	SArray<DC_KData>                m_arrDynaData; 
 	SArray<DC_KData>                m_arrKData;
-	CPageImplBase*                  m_pQuoteListImpl;
 };
 
