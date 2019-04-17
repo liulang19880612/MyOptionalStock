@@ -149,6 +149,8 @@ echo f| xcopy  /y  $(ProjectDir)..\..\bin\souid.lib   $(ProjectDir)..\output\lib
     <ClInclude Include="ExternCtrls\imre\RichEditOleCtrls.h" />
     <ClInclude Include="ExternCtrls\imre\RichEditUnitConverter.h" />
     <ClInclude Include="ExternCtrls\imre\SImRichEdit.h" />
+    <ClInclude Include="ExternCtrls\miniblink\SMiniBlink.h" />
+    <ClInclude Include="ExternCtrls\miniblink\wkedefine.h" />
     <ClInclude Include="ExternCtrls\SButtonEx.h" />
     <ClInclude Include="ExternCtrls\SGroupList.h" />
     <ClInclude Include="ExternCtrls\SImageView.h" />
@@ -215,6 +217,7 @@ echo f| xcopy  /y  $(ProjectDir)..\..\bin\souid.lib   $(ProjectDir)..\output\lib
     <ClCompile Include="ExternCtrls\imre\RichEditOleCtrls.cpp" />
     <ClCompile Include="ExternCtrls\imre\RichEditUnitConverter.cpp" />
     <ClCompile Include="ExternCtrls\imre\SImRichedit.cpp" />
+    <ClCompile Include="ExternCtrls\miniblink\SMiniBlink.cpp" />
     <ClCompile Include="ExternCtrls\SButtonEx.cpp" />
     <ClCompile Include="ExternCtrls\SGroupList.cpp" />
     <ClCompile Include="ExternCtrls\SImageView.cpp" />

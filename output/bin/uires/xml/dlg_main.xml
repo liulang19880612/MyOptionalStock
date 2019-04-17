@@ -25,6 +25,9 @@
               colorText="#333333"
               font="face:微软雅黑,size:16,adding:1">我的自选股</text>
 	   <tabctrl pos="0,50,-0,-0" name="tab_ctrls" font="style:StrokeAndFill,blurStyle:solid,blurRadius:3" animateSteps="10" animateType="1" tabHeight="0">
+			<page title="webkit">
+                 <wkeWebkit pos="0,0,-0,-0" url="E:\\SOUI\\soui\\MyOptionalStock\\output\\bin\\echarts\\Demo1.htm" name="wke_test"/>
+			</page>
 			<page title="kline">
 				<chartctrl name="mychart" pos="0,0,-0,-0"  backgroundskin="skin_rect_purclr" clrCursorLine="RGBA(255,255,255,255)" 
 				axiswidth="100" titlehight="20" >

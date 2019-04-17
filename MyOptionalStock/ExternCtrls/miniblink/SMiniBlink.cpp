@@ -70,8 +70,7 @@ namespace SOUI
 
 	void wkeURLChangedCallback(wkeWebView webView, void* param, const wkeString url)
 	{
-		SStringT strUrl = wkeToStringW(url);
-		int abc;
+		wkeToStringW(url);
 	}
 
 
@@ -141,7 +140,7 @@ namespace SOUI
 
 		if (wParam == VK_F12)
 		{
-			wkeSetDebugConfig(m_pWebView, "showDevTools", u8"E:\\doc\\Visual Studio 2017\\Projects\\SouiAndMb\\Debug\\front_end\\inspector.html");
+			wkeSetDebugConfig(m_pWebView, "showDevTools", "E:\\doc\\Visual Studio 2017\\Projects\\SouiAndMb\\Debug\\front_end\\inspector.html");
 		}
 		SetMsgHandled(wkeFireKeyDownEvent(m_pWebView, wParam, flags, false));
 		return 0;

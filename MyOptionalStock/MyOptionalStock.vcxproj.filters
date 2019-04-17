@@ -58,6 +58,9 @@
     <Filter Include="K线控件">
       <UniqueIdentifier>{cf79520a-fefd-4842-a315-5873a668e767}</UniqueIdentifier>
     </Filter>
+    <Filter Include="扩展控件\mb">
+      <UniqueIdentifier>{703d50ff-ab10-45e5-960b-5a840c3d8902}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -267,6 +270,12 @@
     <ClInclude Include="ChartCtrl\ChartCtrl.h">
       <Filter>K线控件</Filter>
     </ClInclude>
+    <ClInclude Include="ExternCtrls\miniblink\wkedefine.h">
+      <Filter>扩展控件\mb</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternCtrls\miniblink\SMiniBlink.h">
+      <Filter>扩展控件\mb</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -439,6 +448,9 @@
     </ClCompile>
     <ClCompile Include="ChartCtrl\ChartCtrl.cpp">
       <Filter>K线控件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExternCtrls\miniblink\SMiniBlink.cpp">
+      <Filter>扩展控件\mb</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
