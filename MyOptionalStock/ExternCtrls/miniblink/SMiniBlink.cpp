@@ -70,7 +70,8 @@ namespace SOUI
 
 	void wkeURLChangedCallback(wkeWebView webView, void* param, const wkeString url)
 	{
-		wkeToStringW(url);
+		SStringT strUrl = wkeToStringW(url);
+		int abc;
 	}
 
 

@@ -11,6 +11,7 @@
 #include "KeyboardWizardDlg.h"
 #include "IMChart/IMChartDlg.h"
 #include "ExternEvent/ExtendEvents.h"
+#include "ExternCtrls/miniblink/SMiniBlink.h"
 
 
 
@@ -146,7 +147,13 @@ BOOL CMainDlg::OnInitDialog(HWND hWnd, LPARAM lParam)
 		m_pQuoteListImpl->OnInit(this);
 	}
 
-
+	SWkeWebkit *pWeb = FindChildByName2<SWkeWebkit>(L"wke_test");
+	SASSERT(pWeb);
+	if (pWeb)
+	{
+		// ÉèÖÃcookie
+		wkeSetCookie(pWeb->GetWebView(), "", "");
+	}
 
 	std::string ret;
 	urlopen("http://data.gtimg.cn/flashdata/hushen/4day/sz/sz300251.js?maxage=43200&visitDstTime=1", ret);
