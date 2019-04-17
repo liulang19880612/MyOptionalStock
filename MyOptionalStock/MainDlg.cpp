@@ -151,8 +151,9 @@ BOOL CMainDlg::OnInitDialog(HWND hWnd, LPARAM lParam)
 	SASSERT(pWeb);
 	if (pWeb)
 	{
+		// wkeLoadURL(pWeb->GetWebView(),"www.baidu.com");
 		// ÉèÖÃcookie
-		wkeSetCookie(pWeb->GetWebView(), "", "");
+		// wkeSetCookie(pWeb->GetWebView(), "www.baidu.com", "Set-cookie: PRODUCTINFO=webxpress; domain=.fidelity.com; path=/; secure");
 	}
 
 	std::string ret;
