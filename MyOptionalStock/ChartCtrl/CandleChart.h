@@ -400,3 +400,4 @@ void DrawArc(IRenderTarget* pRender, COLORREF clr, int x, int y, int width, int 
 void DrawPointer(IRenderTarget* pRender, int nX, int nY, COLORREF rgb, COLORREF clrBK, int nPenStype, int cx = 6, int cy = 6, BOOL bFillBk = true, int nPenThick = 1);
 void DrawTipRect(IRenderTarget *pRender, const CRect& rc, COLORREF clrBK, COLORREF clrBorder);
 void DrawPath(IRenderTarget *pRender, LPPOINT pts, int nCount, COLORREF clr);
+void DrawFocusPoint(IRenderTarget *pRender, const CPoint& pt);

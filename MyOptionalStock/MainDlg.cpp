@@ -12,7 +12,7 @@
 #include "IMChart/IMChartDlg.h"
 #include "ExternEvent/ExtendEvents.h"
 #include "ExternCtrls/miniblink/SMiniBlink.h"
-
+#include <mutex>
 
 
 
@@ -151,6 +151,7 @@ BOOL CMainDlg::OnInitDialog(HWND hWnd, LPARAM lParam)
 		// 设置cookie
 		// wkeSetCookie(pWeb->GetWebView(), "www.baidu.com", "Set-cookie: PRODUCTINFO=webxpress; domain=.fidelity.com; path=/; secure");
 	}
+
 
 	std::string ret;
 	urlopen("http://data.gtimg.cn/flashdata/hushen/4day/sz/sz300251.js?maxage=43200&visitDstTime=1", ret);
@@ -302,6 +303,53 @@ void CMainDlg::OnImChart()
 	if ( m_pIMChartDlg && m_pIMChartDlg->IsWindow())
 	{
 		m_pIMChartDlg->ShowWindow(SW_SHOW);
+	}
+}
+void CMainDlg::_GetCurrentValue()
+{
+	SWkeWebkit *pWkeWebkit = FindChildByName2<SWkeWebkit>(L"wke_test");
+	SASSERT(pWkeWebkit);
+	if ( pWkeWebkit)
+	{
+		// 方法一：使用 jsGetGlobal 函数获取值
+		jsValue jsRet = jsGetGlobal(wkeGlobalExec(pWkeWebkit->GetWebView()),"values");
+		// 方法二：使用 wkeRunJS 函数获取值
+		// MiniBlink 要返回 js 函数的值需要加 return!!!
+		// 但是不知道为什么 getValue 函数返回出来的 values 居然不是 Array 类型而是 String 类型
+		// 这个问题还需要继续查看
+		//jsValue jsRet = wkeRunJS(pWkeWebkit->GetWebView(), "return getValue();");
+		jsType type = jsTypeOf(jsRet);
+		if ( jsIsArray(jsRet))
+		{
+			m_uValue1 = jsToInt(wkeGlobalExec(pWkeWebkit->GetWebView()), jsGetAt(wkeGlobalExec(pWkeWebkit->GetWebView()), jsRet, 0));
+			m_uValue2 = jsToInt(wkeGlobalExec(pWkeWebkit->GetWebView()), jsGetAt(wkeGlobalExec(pWkeWebkit->GetWebView()), jsRet, 1));
+			m_uValue3 = jsToInt(wkeGlobalExec(pWkeWebkit->GetWebView()), jsGetAt(wkeGlobalExec(pWkeWebkit->GetWebView()), jsRet, 2));
+			m_uValue4 = jsToInt(wkeGlobalExec(pWkeWebkit->GetWebView()), jsGetAt(wkeGlobalExec(pWkeWebkit->GetWebView()), jsRet, 3));
+		}
+	}
+}
+// 调用 js 函数 ChangeValue
+void CMainDlg::OnChangeValue()
+{
+	static int i = 0;
+	if ( i ==0)
+	{
+		_GetCurrentValue();
+	}
+	switch ( i %4)
+	{
+		case 0:m_uValue4++; break;
+		case 1:m_uValue1++; break;
+		case 2:m_uValue2++; break;
+		case 3:m_uValue3++; break;
+	}
+	++i;
+	SOUI::SWkeWebkit *pWkeWebkit = FindChildByName2<SOUI::SWkeWebkit>(L"wke_test");
+	if (pWkeWebkit != NULL)
+	{
+		SOUI::SStringA strCallJs;
+		strCallJs.Format("changeValue(%d,%d,%d,%d);", m_uValue1, m_uValue2, m_uValue3, m_uValue4);
+		wkeRunJS(pWkeWebkit->GetWebView(), strCallJs);
 	}
 }
 BOOL CMainDlg::OnEraseBkgnd(HDC dc)

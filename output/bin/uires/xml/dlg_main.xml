@@ -17,6 +17,7 @@
       <imgbtn name="btn_restore" skin="skin_common_restore"  pos="-100,{0" show="0" animate="1" cursor="hand"/>
       <imgbtn name="btn_min"     skin="skin_common_min" pos="-150,{0" animate="1" cursor="hand"/>
 	  <imgbtn name="btn_im_chart"     skin="skin_message" pos="-200,{0" animate="1" cursor="hand"/>
+	  <button name="btn_change_value"   text="改变图表值" pos="-250,{0" animate="1" cursor="hand"/>
 	  <img name="main_logo" pos="10,10" skin="skin_default_logo32p" msgTransparent="0" cursor="hand"/> 
       <text name="page_name"
               pos="[10,15,-75,35"
@@ -25,16 +26,17 @@
               colorText="#333333"
               font="face:微软雅黑,size:16,adding:1">我的自选股</text>
 	   <tabctrl pos="0,50,-0,-0" name="tab_ctrls" font="style:StrokeAndFill,blurStyle:solid,blurRadius:3" animateSteps="10" animateType="1" tabHeight="0">
-			<page title="webkit">
-                 <wkeWebkit pos="0,0,-0,-0" url="E:\\SOUI\\soui\\MyOptionalStock\\output\\bin\\echarts\\Demo1.htm" name="wke_test"/>
-			</page>
 			<page title="kline">
 				<chartctrl name="mychart" pos="0,0,-0,-0"  backgroundskin="skin_rect_purclr" clrCursorLine="RGBA(255,255,255,255)" 
 				axiswidth="100" titlehight="20" >
 					<charttitlectrl  name="title"   margin="1,1,0,0" colorBorder="rgb(255,0,0)" backgroundskin="skin_rect_purclr"></charttitlectrl>
 				</chartctrl>
 			</page>
-	
+			<page title="webkit">
+                 <wkeWebkit pos="0,0,-0,-0" url="E:\\SOUI\\soui\\MyOptionalStock\\output\\bin\\echarts\\Demo1.htm" name="wke_test"/>
+			</page>
+
+
 	   </tabctrl>
      </caption>
   </root>

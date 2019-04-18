@@ -16,12 +16,14 @@ public:
 	~CMainDlg();
 public:
 	void ShowKeyboardWizard();
+	void _GetCurrentValue();
 public:
 	void OnClose();
 	void OnMaximize();
 	void OnRestore();
 	void OnMinimize();
 	void OnImChart();
+	void OnChangeValue();
 	void OnSize(UINT nType, SOUI::CSize size);
 	BOOL OnEraseBkgnd(HDC dc);
 	int  OnCreate(LPCREATESTRUCT lpCreateStruct);
@@ -35,6 +37,7 @@ protected:
 		EVENT_NAME_COMMAND(L"btn_max", OnMaximize)
 		EVENT_NAME_COMMAND(L"btn_restore", OnRestore)
 		EVENT_NAME_COMMAND(L"btn_im_chart", OnImChart)
+		EVENT_NAME_COMMAND(L"btn_change_value", OnChangeValue)
 	EVENT_MAP_END()
 
 	//HostWnd真实窗口消息处理
@@ -54,5 +57,6 @@ protected:
 	CIMChartDlg*                    m_pIMChartDlg;         // 聊天工具
 	SArray<DC_KData>                m_arrDynaData; 
 	SArray<DC_KData>                m_arrKData;
+	int                             m_uValue1, m_uValue2, m_uValue3, m_uValue4;
 };
 

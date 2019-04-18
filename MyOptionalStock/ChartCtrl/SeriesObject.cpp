@@ -662,20 +662,155 @@ void CCandleSeries::Draw(IRenderTarget* pRender)
 
 void CCandleSeries::DrawNameLabel(IRenderTarget* pRender)
 {
+	int cnt = m_SerirsData.GetCount();
+	if (cnt<1) return;
 
+	int candleWid = m_pAxisHoriz->GetCandleWidth();
+	int x = m_pAxisHoriz->Value2Pix(cnt - 1) + candleWid;
+	int y = m_pAxisVert->Value2Pix(m_SerirsData.GetAt(cnt - 1).Close);
+	
+	SStringW strLabel = S_CA2W(m_contract.ContractName);
+
+	CSize sz;
+	pRender->MeasureText(strLabel, strLabel.GetLength(), &sz);
+	CRect rcLabel(x + 10, y + 10, x + 10 + sz.cx + 4, y + 10 + sz.cy + 4);
+
+	if (rcLabel.bottom>m_pChart->bottom)
+	{
+		DrawLine(pRender, PS_SOLID, x, y, x + 10, y - 10, RGB(255, 255, 0));
+		rcLabel.MoveToY(y - 10 - rcLabel.Height());
+	}
+	else
+	{
+		DrawLine(pRender, PS_SOLID, x, y, x + 10, y + 10, RGB(255, 255, 0));
+	}
+
+	DrawRect(pRender, rcLabel, RGB(0, 0, 0), RGB(255, 255, 255), 1, 160);
+
+	pRender->SetTextColor(RGB(255, 255, 0));
+	pRender->DrawText(strLabel, strLabel.GetLength(), &rcLabel, DT_VCENTER | DT_SINGLELINE | DT_CENTER);
+
+
+	for (int i = 0; i < cnt; i++)
+	{
+		if (m_SerirsData.GetAt(i).Close != InvalidNumeric)
+		{
+			double hh = m_SerirsData.GetAt(i).High;
+			int y = m_pAxisVert->Value2Pix(hh);
+			y -= 20;
+			x = m_pAxisHoriz->Value2Pix(i) + candleWid / 2;
+			DrawPointer(pRender, x, y, RGB(255, 255, 0), RGB(255, 255, 0), psCircle, 8, 8);
+			DrawPointer(pRender, x, y, RGB(255, 0, 0), RGB(255, 255, 0), psCircle);
+
+			m_rcDrager.SetRect(x - 8, y - 8, x + 8, y + 8);
+			break;
+		}
+	}
 }
 
 void CCandleSeries::DrawScreenMinMaxPrice(IRenderTarget* pRender, int maxX, int minX, COLORREF clrNormal)
 {
+	if (maxX != -1 && m_ID == 0)
+	{
 
+		int x1 = m_pAxisHoriz->Value2Pix(maxX) + m_pAxisHoriz->GetCandleWidth() / 2;
+		double price = m_SerirsData.GetAt(maxX).High;
+		int x2 = x1 + 30;
+		int y1 = m_pAxisVert->Value2Pix(price);
+		int y2 = y1 - 10;
+
+		SStringW txt = NumericToString(price, m_pAxisHoriz->GetPrect(), 1);
+		CSize sz;
+		pRender->MeasureText(txt,txt.GetLength(), &sz);
+		CRect rcTxt(x2, y2, x2 + sz.cx + 8, y2 + sz.cy + 6);
+		if (m_pChart->GetObjRect().right - (x2 + sz.cx) < 80)
+		{
+			x2 = x1 - 30;
+			rcTxt.SetRect(x2, y2, x2 - sz.cx - 4, y2 + sz.cy);
+		}
+		rcTxt.NormalizeRect();
+		DrawLine(pRender, PS_SOLID, x1, y1, x2, y2, clrNormal);
+		DrawRect(pRender, rcTxt, ES_Color()->clrBK, clrNormal, 1, 100);
+		pRender->SetTextColor(clrNormal);
+		pRender->DrawText(txt, txt.GetLength(), &rcTxt, DT_VCENTER | DT_CENTER | DT_SINGLELINE);
+	}
+
+	if (minX != -1 && m_ID == 0)
+	{
+		int x1 = m_pAxisHoriz->Value2Pix(minX) + m_pAxisHoriz->GetCandleWidth() / 2;
+		double price = m_SerirsData.GetAt(minX).Low;
+		int x2 = x1 + 30;
+		int y1 = m_pAxisVert->Value2Pix(price);
+		int y2 = y1 - 10;
+
+
+		SStringW txt = NumericToString(price, m_pAxisHoriz->GetPrect(), 1);
+		CSize sz;
+		pRender->MeasureText(txt, txt.GetLength(), &sz); 
+		CRect rcTxt(x2, y2, x2 + sz.cx + 8, y2 + sz.cy + 6);
+
+		if (m_pChart->GetObjRect().right - (x2 + sz.cx) < 80)
+		{
+			x2 = x1 - 30;
+			rcTxt.SetRect(x2, y2, x2 - sz.cx - 4, y2 + sz.cy);
+		}
+		rcTxt.NormalizeRect();
+		DrawLine(pRender, PS_SOLID, x1, y1, x2, y2, clrNormal);
+		DrawRect(pRender, rcTxt, ES_Color()->clrBK, clrNormal, 1, 100);
+		pRender->SetTextColor(clrNormal);
+		pRender->DrawText(txt, txt.GetLength(), &rcTxt, DT_VCENTER | DT_CENTER | DT_SINGLELINE);
+	}
 }
-
 
 //绘制波段高低价
 void CCandleSeries::DrawWaveMinMaxPrice(IRenderTarget* pRender, int nCur, COLORREF clrUp, COLORREF clrDown)
 {
+	if (m_arrMaxMinPrice.IsEmpty())
+		return;
+	int nArrIdx = nCur - (int)m_pAxisHoriz->GetMinValue();
+	if (nArrIdx + 1 >= m_arrMaxMinPrice.GetCount())
+		return;
+	if (m_arrMaxMinPrice[nArrIdx + 1] == 1 && m_ID == 0)
+	{
+		int x1 = m_pAxisHoriz->Value2Pix(nCur) + m_pAxisHoriz->GetCandleWidth() / 2;
+		double price = m_SerirsData.GetAt(nCur).High;
+		int x2 = x1 + 20;
+		int y1 = m_pAxisVert->Value2Pix(price);
+		int y2 = y1 + 6;
+		SStringW txt = NumericToString(price, m_pAxisHoriz->GetPrect(), 1);
+		CSize sz;
+		pRender->MeasureText(txt, txt.GetLength(), &sz);
+		CRect rcTxt(x2, y2, x2 + sz.cx + 8, y2 + sz.cy + 6);
+		rcTxt.NormalizeRect();
+		DrawLine(pRender, PS_SOLID,  x1, y1, x2, y2, ES_Color()->clrTxtNormal);
+		DrawLine(pRender, PS_SOLID,  x1, y1, x1 + 6, y1 - 2, ES_Color()->clrTxtNormal);
+		DrawLine(pRender, PS_SOLID,  x1, y1, x1 + 4, y1 + 5, ES_Color()->clrTxtNormal);
 
+		//DrawRect(pRender,rcTxt,ES_Color()->clrBK,clrUp,1,100);
+		pRender->SetTextColor(ES_Color()->clrTxtNormal);
+		pRender->DrawText(txt,txt.GetLength(), &rcTxt, DT_LEFT);
+	}
+
+	if (m_arrMaxMinPrice[nArrIdx + 1] == -1 && m_ID == 0)
+	{
+		int x1 = m_pAxisHoriz->Value2Pix(nCur) + m_pAxisHoriz->GetCandleWidth() / 2;
+		double price = m_SerirsData.GetAt(nCur).Low;
+		int x2 = x1 + 10;
+		int y1 = m_pAxisVert->Value2Pix(price) + 1;
+		int y2 = y1;
+		SStringW txt = NumericToString(price, m_pAxisHoriz->GetPrect(), 1);
+		CSize sz;
+		pRender->MeasureText(txt, txt.GetLength(), &sz);
+		CRect rcTxt(x2, y2 - sz.cy / 2 - 3, x2 + sz.cx + 8, y2 + sz.cy / 2 + 3);
+		rcTxt.NormalizeRect();
+		DrawLine(pRender, PS_SOLID, x1, y1, x1 + 4, y1 - 4, ES_Color()->clrTxtNormal);
+		DrawLine(pRender, PS_SOLID, x1, y1, x1 + 4, y1 + 4, ES_Color()->clrTxtNormal);
+		DrawLine(pRender, PS_SOLID, x1, y1, x2, y2, ES_Color()->clrTxtNormal);
+		pRender->SetTextColor(ES_Color()->clrTxtNormal);
+		pRender->DrawText(txt, txt.GetLength(), &rcTxt, DT_VCENTER | DT_LEFT | DT_SINGLELINE);
+	}
 }
+
 //-------------------------------CIndicatorSeries-------------------------
 CIndicatorSeries::CIndicatorSeries()
 {
@@ -1515,12 +1650,12 @@ void CIndicatorSeries::DrawPartLine(IRenderTarget* pRender)		//绘制线段序列
 
 		int pixY = m_pAxisVert->Value2Pix(curPrice);
 		int pixY2 = m_pAxisVert->Value2Pix(item.fLineValue);
-		//DrawLine(pRender, pixX, pixY, pixX2, pixY2, item.clrLine, item.nLinWid);
+		DrawLine(pRender, PS_SOLID, pixX, pixY, pixX2, pixY2, item.clrLine, item.nLinWid);
 
 		if (m_bSelected)
 		{
-			//DrawFocusPoint(pRender, CPoint(pixX, pixY));
-			//DrawFocusPoint(pRender, CPoint(pixX2, pixY2));
+			DrawFocusPoint(pRender, CPoint(pixX, pixY));
+			DrawFocusPoint(pRender, CPoint(pixX2, pixY2));
 		}
 	}
 }

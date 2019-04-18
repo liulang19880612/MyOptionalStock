@@ -472,3 +472,12 @@ void DrawTipRect(IRenderTarget *pRender, const CRect& rc, COLORREF clrBK, COLORR
 
 	DrawPath(pRender, pts, sizeof(pts) / sizeof(POINT), clrBorder);
 }
+void DrawFocusPoint(IRenderTarget *pRender, const CPoint& pt)
+{
+	CAutoRefPtr<IPen> pPen, oldPen;
+	pRender->CreatePen(PS_GEOMETRIC | PS_ENDCAP_SQUARE, RGB(255, 255, 255), 6, &pPen);
+	pRender->SelectObject(pPen, (IRenderObj**)&oldPen);
+	CPoint pts[2] = { { pt.x - 1, pt.y }, { pt.x, pt.y } };
+	pRender->DrawLines(pts, 2);
+	pRender->SelectObject(oldPen);
+}
