@@ -768,7 +768,7 @@ void CCandleSeries::DrawWaveMinMaxPrice(IRenderTarget* pRender, int nCur, COLORR
 	if (m_arrMaxMinPrice.IsEmpty())
 		return;
 	int nArrIdx = nCur - (int)m_pAxisHoriz->GetMinValue();
-	if (nArrIdx + 1 >= m_arrMaxMinPrice.GetCount())
+	if (nArrIdx + 1 >= (int) m_arrMaxMinPrice.GetCount())
 		return;
 	if (m_arrMaxMinPrice[nArrIdx + 1] == 1 && m_ID == 0)
 	{

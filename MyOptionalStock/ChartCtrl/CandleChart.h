@@ -331,10 +331,6 @@ struct ObjectInfo
 #define FREE_CANDLE_COUNT (5)	 //右端空白K线根数
 #define MAX_CHART_NUM  (5)       //最多加载多少个子图
 
-
-
-
-
 #define CHART_MSG_LBT_CLICK				37103     //鼠标左键点击消息
 #define CHART_MSG_RBT_CLICK				37104	  //鼠标右键单击消息
 #define CHART_MSG_GETMORE				37106     //获取更多数据
