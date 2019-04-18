@@ -4,6 +4,7 @@
 
 class CKeyboardWizardDlg;
 class CIMChartDlg;
+class CDrawToolDlg;
 
 #include "ChartCtrl/ChartCtrl.h"
 #include "ChartCtrl/CandleChart.h"
@@ -24,6 +25,7 @@ public:
 	void OnMinimize();
 	void OnImChart();
 	void OnChangeValue();
+	void OnDrawTool();
 	void OnSize(UINT nType, SOUI::CSize size);
 	BOOL OnEraseBkgnd(HDC dc);
 	int  OnCreate(LPCREATESTRUCT lpCreateStruct);
@@ -38,6 +40,7 @@ protected:
 		EVENT_NAME_COMMAND(L"btn_restore", OnRestore)
 		EVENT_NAME_COMMAND(L"btn_im_chart", OnImChart)
 		EVENT_NAME_COMMAND(L"btn_change_value", OnChangeValue)
+		EVENT_NAME_COMMAND(L"btn_draw_tool", OnDrawTool)
 	EVENT_MAP_END()
 
 	//HostWnd真实窗口消息处理
@@ -55,6 +58,7 @@ protected:
 	BOOL                            m_bLayoutInited;       // 初始化完成标记
 	CKeyboardWizardDlg*             m_pAutoPromptDlg;      // 自动提示
 	CIMChartDlg*                    m_pIMChartDlg;         // 聊天工具
+	CDrawToolDlg*                   m_pDrawToolDlg;        // 画图工具
 	SArray<DC_KData>                m_arrDynaData; 
 	SArray<DC_KData>                m_arrKData;
 	int                             m_uValue1, m_uValue2, m_uValue3, m_uValue4;

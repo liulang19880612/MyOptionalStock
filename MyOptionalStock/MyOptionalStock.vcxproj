@@ -116,6 +116,7 @@ echo f| xcopy  /y  $(ProjectDir)..\..\bin\souid.lib   $(ProjectDir)..\output\lib
     <ClInclude Include="ChartCtrl\CandleChart.h" />
     <ClInclude Include="ChartCtrl\ChartCtrl.h" />
     <ClInclude Include="ChartCtrl\ChartTitleCtrl.h" />
+    <ClInclude Include="ChartCtrl\DrawToolDlg.h" />
     <ClInclude Include="ChartCtrl\DynaChart.h" />
     <ClInclude Include="ChartCtrl\KChart.h" />
     <ClInclude Include="ChartCtrl\RectChart.h" />
@@ -185,6 +186,7 @@ echo f| xcopy  /y  $(ProjectDir)..\..\bin\souid.lib   $(ProjectDir)..\output\lib
     <ClCompile Include="ChartCtrl\CandleChart.cpp" />
     <ClCompile Include="ChartCtrl\ChartCtrl.cpp" />
     <ClCompile Include="ChartCtrl\ChartTitleCtrl.cpp" />
+    <ClCompile Include="ChartCtrl\DrawToolDlg.cpp" />
     <ClCompile Include="ChartCtrl\DynaChart.cpp" />
     <ClCompile Include="ChartCtrl\KChart.cpp" />
     <ClCompile Include="ChartCtrl\RectChart.cpp" />

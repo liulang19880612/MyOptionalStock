@@ -7,6 +7,7 @@
 		<file name="XML_MAINWND"     path="xml\dlg_main.xml"/>
 		<file name="XML_AUTO_PROMPT" path="xml\auto_prompt.xml"/>
 		<file name="XML_QUOTE_LIST"  path="xml\quotelist.xml"/>
+		<file name="DRAW_TOOL"  path="xml\drawtool_dlg.xml"/>
 		<!--聊天工具-->
 		<file name="XML_IMCHART"                path="xml\IMXml\im_chart_dlg.xml"/>
 		<file name="XML_PAGE_LASTTALK"          path="xml\IMXml\page_list_lasttalk.xml" />

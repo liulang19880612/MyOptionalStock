@@ -12,13 +12,13 @@
 #include "IMChart/IMChartDlg.h"
 #include "ExternEvent/ExtendEvents.h"
 #include "ExternCtrls/miniblink/SMiniBlink.h"
-#include <mutex>
+#include "ChartCtrl/DrawToolDlg.h"
 
 
 
 using namespace rapidjson;
 
-CMainDlg::CMainDlg() : SHostWnd(_T("LAYOUT:XML_MAINWND"))
+CMainDlg::CMainDlg() : SHostWnd(L"LAYOUT:XML_MAINWND")
 {
 	m_bLayoutInited = FALSE;
 
@@ -41,6 +41,11 @@ int CMainDlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_pIMChartDlg->Create(m_hWnd, 0, 0, 800,640);
 	m_pIMChartDlg->ShowWindow(SW_HIDE);
 	m_pIMChartDlg->SendMessage(WM_INITDIALOG);
+
+	// 初始化画图工具
+	m_pDrawToolDlg = new CDrawToolDlg(L"LAYOUT:DRAW_TOOL");
+	m_pDrawToolDlg->Create(m_hWnd, 0, 0, 800, 640);
+	m_pDrawToolDlg->ShowWindow(SW_HIDE);
 	return 0;
 }
 std::string& replace_str(std::string& str, const std::string& to_replaced, const std::string& newchars)
@@ -303,6 +308,15 @@ void CMainDlg::OnImChart()
 	if ( m_pIMChartDlg && m_pIMChartDlg->IsWindow())
 	{
 		m_pIMChartDlg->ShowWindow(SW_SHOW);
+	}
+}
+void CMainDlg::OnDrawTool()
+{
+	if (m_pDrawToolDlg && m_pDrawToolDlg->IsWindow())
+	{
+		CPoint pt; GetCursorPos(&pt);
+		m_pDrawToolDlg->MoveWindow(&CRect(pt.x,pt.y,pt.x+400,pt.y + 50));
+		m_pDrawToolDlg->ShowWindow(SW_SHOW);
 	}
 }
 void CMainDlg::_GetCurrentValue()

@@ -58,6 +58,9 @@
     <Filter Include="扩展控件\GridCtrl">
       <UniqueIdentifier>{aa58d32f-1cfb-4094-b61c-8a78ac9e854b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="K线控件\画图工具">
+      <UniqueIdentifier>{c012ee13-cd14-4ba1-a7ec-6118230c02a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -264,6 +267,9 @@
     <ClInclude Include="ExternCtrls\miniblink\SMiniBlink.h">
       <Filter>扩展控件\mb</Filter>
     </ClInclude>
+    <ClInclude Include="ChartCtrl\DrawToolDlg.h">
+      <Filter>K线控件\画图工具</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -430,6 +436,9 @@
     </ClCompile>
     <ClCompile Include="ExternCtrls\miniblink\SMiniBlink.cpp">
       <Filter>扩展控件\mb</Filter>
+    </ClCompile>
+    <ClCompile Include="ChartCtrl\DrawToolDlg.cpp">
+      <Filter>K线控件\画图工具</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
