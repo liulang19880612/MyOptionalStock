@@ -756,8 +756,118 @@ bool CKChart::OnDrag(CPoint& from, CPoint &pt, bool bLeft)
 
 bool CKChart::OnClick(CPoint &pt, bool bLeft/* = true*/)
 {
-	return false;
+	if (m_bMainChart)
+	{
+		if (m_pChartCtrl->GetInfoPanelRect().PtInRect(pt))
+		{
+			//::SendMessage(GetParent(m_pBrowser->m_pStatic->GetSafeHwnd()), CHART_MSG_BUTTON_CLICK, 0, 0);
+			return true;
+		}
+	}
+
+	m_pAxisX->SetFocusIndex(-1);
+
+	if (IsDrawShape())
+	{
+		return __super::OnClick(pt, bLeft);
+	}
+
+	for (int i = 0; i < m_arrButtons.GetCount(); i++)
+	{
+		if (m_arrButtons[i].rc.PtInRect(pt))
+		{
+			auto it = m_arrButtons[i];
+			//::SendMessage(GetParent(m_pBrowser->m_pStatic->GetSafeHwnd()), CHART_MSG_BUTTON_CLICK, 1, (LPARAM)m_arrButtons[i].lParam);
+			return true;
+		}
+	}
+
+	m_pSelSeries = NULL;
+	BOOL bSel = FALSE;
+	SPOSITION pos = m_mapCandleSeries.GetStartPosition();
+	while (pos)
+	{
+		//判断哪个序列被单击了，把它设置为激活状态，其他的都设置为非激活状态
+		int nKey;
+		CSeriesObject *pSeries = NULL;
+		m_mapCandleSeries.GetNextAssoc(pos, nKey, pSeries);
+		if (pSeries)
+		{
+			pSeries->Select(false);
+			if (bSel)
+			{
+				//已经有选中的了，剩下的全部取消选择
+				continue;
+			}
+
+			if (pSeries->HitTest(pt) != -1)
+			{
+				pSeries->Select(true);
+				m_pSelSeries = pSeries;
+				bSel = TRUE;
+			}
+		}
+	}
+
+	//检测指标
+	SPOSITION pos = m_mapIndiCatorSeries.GetStartPosition();
+	while (pos)
+	{
+		//判断哪个序列被单击了，把它设置为激活状态，其他的都设置为非激活状态
+		int nKey;
+		CSeriesObject *pSeries = NULL;
+		m_mapIndiCatorSeries.GetNextAssoc(pos, nKey, pSeries);
+		if (pSeries)
+		{
+			pSeries->Select(false);
+			if (bSel)
+			{
+				//已经有选中的了，剩下的全部取消选择
+				continue;
+			}
+
+			int nSel = pSeries->HitTest(pt);
+			if (nSel != -1)
+			{
+				if (nSel == -2)
+					nSel = -1;
+				pSeries->Select(TRUE, nSel);
+				m_pSelSeries = pSeries;
+				bSel = TRUE;
+			}
+		}
+	}
+
+	//如果选择了一个序列，就用这个序列的坐标来绘制纵坐标
+	m_pCurAxisVert = NULL;
+	if (m_pSelSeries != NULL/* && m_pSelSeries->IsOnwnAxis()*/)
+	{
+		m_pCurAxisVert = m_pSelSeries->GetSelectAxis();
+	}
+	Refresh();
+	if (!bSel)
+	{
+		if (m_bHaveSelObject)
+		{
+			m_bHaveSelObject = FALSE;
+			return true;
+		}
+		else
+		{
+			if (pt.y > m_rcObj.top)
+				return __super::OnClick(pt, bLeft);
+			else
+				return true;
+		}
+	}
+	else
+	{
+		m_zoomRc.SetRectEmpty();//暂时将该句代码放在这里，因为不走父类的OnClick了
+		m_bHaveSelObject = TRUE;
+		return true;
+	}
 }
+
 bool CKChart::OnMouseMove(CPoint& pt)
 {
 	for (size_t i = 0; i < m_arrButtons.GetCount(); i++)

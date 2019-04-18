@@ -21,6 +21,7 @@ public:
 	void     DrawObjects(IRenderTarget* pRender, bool bRedraw);
 protected:
 	void AfterShapePenClick();   //画笔被点击了一下以后的处理
+	BOOL IsDrawShape();		//是否正在画图
 protected:
 	RAPenType                   m_curPen;	          //鼠标类型,枚举值
 	CShapePen*                  m_pCurShapePen;

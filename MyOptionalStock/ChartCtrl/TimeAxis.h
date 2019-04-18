@@ -30,6 +30,7 @@ public:
 	int     GetXValueByTime(long time);
 	void    SetContract(const DC_ContractInfo* ci);          // 设置合约信息
 	DC_ContractInfo* GetContract(){ return &m_contract; }    // 获取合约信息
+	void SetFocusIndex(int nIdx);
 public:
 	bool                   m_bFocus;              // 是否焦点
 	Period                 m_Period;		      // 周期类型

@@ -2,6 +2,7 @@
 #include "ShapeChart.h"
 #include "ShapeFactory.h"
 #include "TimeAxis.h"
+#include "ChartCtrl.h"
 
 CShapeChart::CShapeChart()
 {
@@ -128,18 +129,18 @@ void CShapeChart::SelectPen(int type)
 }
 void CShapeChart::DrawObjects(IRenderTarget* pRender, bool bRedraw)
 {
-// 	if (IsDrawShape())
-// 	{
-// 		m_pChartCtrl->ShowMouseLine(false);
-// 	}
-// 	__super::DrawObjects(pDC, bRedraw);
-// 	CRgn rgn, rgnOld;
-// 	CRect rcClip;
-// 	pRender->GetClipBox(&rcClip);
-// 
-// 	rgn.CreateRectRgn(m_rcObj.left, m_rcObj.top, m_rcObj.right, m_rcObj.bottom);
-// 	rgnOld.CreateRectRgn(rcClip.left, rcClip.top, rcClip.right, rcClip.bottom);
-// 
+	if (IsDrawShape())
+	{
+		m_pChartCtrl->ShowMouseLine(false);
+	}
+	__super::DrawObjects(pRender, bRedraw);
+	CRgn rgn, rgnOld;
+	CRect rcClip;
+	pRender->GetClipBox(&rcClip);
+
+	rgn.CreateRectRgn(m_rcObj.left, m_rcObj.top, m_rcObj.right, m_rcObj.bottom);
+	rgnOld.CreateRectRgn(rcClip.left, rcClip.top, rcClip.right, rcClip.bottom);
+
 // 	pRender->SelectClipRgn(&rgn, RGN_AND);
 // 	DrawShape(pDC);
 // 	pRender->SelectClipRgn(&rgnOld, RGN_OR);
@@ -161,4 +162,8 @@ void CShapeChart::AfterShapePenClick()
 		}
 	}
 	Refresh();
+}
+BOOL CShapeChart::IsDrawShape()
+{
+	return m_curPen != doSelect;
 }

@@ -80,7 +80,10 @@ double CTimeAxis::Pix2Value(int pix)
 
 	return ret;
 }
-
+void CTimeAxis::SetFocusIndex(int nIdx)
+{
+	m_nFocusIndex = nIdx;
+}
 void CTimeAxis::Draw(IRenderTarget *pRender)
 {
 	CRect rcBorder;
