@@ -114,7 +114,6 @@
     <imglist name="skin_c18" src="PNG:IDB_PNG_C18" states="4" />
     <imglist name="skin_c19" src="PNG:IDB_PNG_C19" states="4" />
     <imglist name="skin_c20" src="PNG:IDB_PNG_C20" states="4" />
-
     <imgframe name="skin_vline" src="PNG:IDB_PNG_VLINE" />
     <imgframe name="skin_word_sign" src="PNG:IDB_PNG_WORDSING" />
     <imglist name="skin_cbx_btn" src="PNG:IDB_PNG_CBXBTN" states="3" />
