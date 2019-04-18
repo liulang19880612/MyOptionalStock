@@ -14,5 +14,5 @@ CDrawToolDlg::~CDrawToolDlg()
 }
 void CDrawToolDlg::OnLButtonUp(UINT nFlags, CPoint point)
 {
-
+	SetMsgHandled(FALSE);
 }

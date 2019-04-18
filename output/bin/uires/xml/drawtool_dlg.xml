@@ -4,6 +4,8 @@
       sendWheel2Hover="1"
       translucent="0">
   <root skin="skin_shadow" cache="1">
-      <imgbtn name="btn_close" skin="skin_common_close"    pos="-50,0" tip="关闭" animate="1" cursor="hand"/>
+	<window  pos="0,0,-0,-0" colorBkgnd="rgb(230,234,238)" show="1">
+		<imgbtn name="btn_close" skin="skin_common_close"    pos="-50,0" tip="关闭" animate="1" cursor="hand"/>
+    </window>
   </root>
 </SOUI>
