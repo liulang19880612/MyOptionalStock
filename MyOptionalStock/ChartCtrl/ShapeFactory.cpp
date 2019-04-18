@@ -12,7 +12,7 @@ CShapeFactory::~CShapeFactory(void)
 
 }
 
-CShape* CShapeFactory::CreateShape(RAPenType type, int nWidLen, COLORREF clr, const SArray<ChartDot>& arr, CAxis *pAxisX, CAxis* pAxisY)   //根据锚点和数据生成一个Shape
+CShape* CShapeFactory::CreateShape(ChartPenType type, int nWidLen, COLORREF clr, const SArray<ChartDot>& arr, CAxis *pAxisX, CAxis* pAxisY)   //根据锚点和数据生成一个Shape
 {
 	CShape *pShape = NULL;
 	if(type == doSPX || type == doCZX)
@@ -77,7 +77,7 @@ CShape* CShapeFactory::CreateShape(RAPenType type, int nWidLen, COLORREF clr, co
 	return pShape;
 }
 
-CShapePen* CShapeFactory::CreatePen(RAPenType type, CAxis *pAxisX, CAxis* pAxisY)
+CShapePen* CShapeFactory::CreatePen(ChartPenType type, CAxis *pAxisX, CAxis* pAxisY)
 {
 	CShapePen *pPen = NULL;
 

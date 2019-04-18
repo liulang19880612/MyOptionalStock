@@ -5,10 +5,10 @@ class CShapePen
 {
 public:
 	CShapePen();
-	void Create(RAPenType type, CAxis *pAixsX, CAxis *pAxisY);
+	void Create(ChartPenType type, CAxis *pAixsX, CAxis *pAxisY);
 	bool IsDrawing();	//判断是否正在绘制
 	bool IsOk();		//判断是否绘制完毕
-	RAPenType GetType();
+	ChartPenType GetType();
 	virtual ~CShapePen(void);
 	virtual void OnClick(const CPoint& pt);
 	virtual void Draw(IRenderTarget*pRender){;}	
@@ -26,7 +26,7 @@ protected:
 	int m_nIcon;
 	
 	bool m_bOk;
-	RAPenType m_type;
+	ChartPenType m_type;
 	CAxis *m_pAxisX;
 	CAxis *m_pAxisY;
 };

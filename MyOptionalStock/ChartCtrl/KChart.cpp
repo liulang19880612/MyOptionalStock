@@ -772,7 +772,7 @@ bool CKChart::OnClick(CPoint &pt, bool bLeft/* = true*/)
 		return __super::OnClick(pt, bLeft);
 	}
 
-	for (int i = 0; i < m_arrButtons.GetCount(); i++)
+	for (size_t i = 0; i < m_arrButtons.GetCount(); i++)
 	{
 		if (m_arrButtons[i].rc.PtInRect(pt))
 		{
@@ -810,7 +810,7 @@ bool CKChart::OnClick(CPoint &pt, bool bLeft/* = true*/)
 	}
 
 	//检测指标
-	SPOSITION pos = m_mapIndiCatorSeries.GetStartPosition();
+	pos = m_mapIndiCatorSeries.GetStartPosition();
 	while (pos)
 	{
 		//判断哪个序列被单击了，把它设置为激活状态，其他的都设置为非激活状态

@@ -44,6 +44,8 @@ public:
 	virtual int GetCurrentPrice(double* pData, int nCount) = 0;		//返回值为0,表示计算失败; pData为空时，直接返回数据个数，pData不为空，则将数据填入pData中返回。
 };
 
+#define    IKShapePtr	IKShape*	
+
 class CShapeFactory;
 
 #define VERSION_SHAPE 2
@@ -57,10 +59,10 @@ public:
 	virtual void GetData(KShapeData& data) ;			//返回图形数据，以便进行序列化保存
 	virtual int GetCurrentPrice(double* pData, int nCount) ;
 
-	void Create(RAPenType type, CAxis * pAxisX, CAxis *pAxisY, const SArray<ChartDot>& data,COLORREF clr, int penWid);
+	void Create(ChartPenType type, CAxis * pAxisX, CAxis *pAxisY, const SArray<ChartDot>& data,COLORREF clr, int penWid);
 	void ChangeSetting(COLORREF clr, int penWid);
 	void Select(BOOL bSel,int nGripper=-1);		//选中/取消选中
-	RAPenType GetType(){return m_Type;}
+	ChartPenType GetType(){return m_Type;}
 	CPoint Griper2Pix(const ChartDot& dot);
 	void SetIcon(int nIcon){m_nIcon = nIcon;}
 	void SetText(const SStringW& text){m_strText = text;}
@@ -111,7 +113,7 @@ protected:
 	CRect m_rcLabel;
 	BOOL m_bAlarmIcon;//是否显示预警图标
 private:
-	RAPenType m_Type;
+	ChartPenType m_Type;
 	BOOL m_bIsMoving;
 	BOOL m_bFocus;
 	COLORREF m_clrNormal;

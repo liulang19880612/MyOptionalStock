@@ -237,7 +237,7 @@ struct SeriesGroup
 };
 
 
-enum RAPenType
+enum ChartPenType
 {
 	doSelect,	//指针
 	doSPX,		//水平线
@@ -306,7 +306,7 @@ enum RAObjectType
 	OT_AXIS_Y,
 	OT_INDICATOR_TITLE
 };
-
+interface IKShape;
 struct ObjectInfo
 {
 	RAObjectType type;
@@ -320,7 +320,8 @@ struct ObjectInfo
 	__time32_t time;  //横坐标对应的时间
 	double fValue;	//纵坐标值
 	
-	RAPenType nPenType;
+	ChartPenType nPenType;
+	IKShape *pShape;
 };
 
 

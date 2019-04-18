@@ -59,21 +59,128 @@ bool CShapeChart::OnMouseDown(CPoint& pt)
 	}
 	return __super::OnMouseDown(pt);
 }
+bool CShapeChart::OnClick(CPoint &pt, bool bLeft)
+{
+	return __super::OnClick(pt, bLeft);
+}
+bool CShapeChart::OnDrag(CPoint& from, CPoint &pt, bool bLeft)
+{
+	return __super::OnDrag(from, pt, bLeft);
+
+}
+bool CShapeChart::OnDragUp(CPoint&from, CPoint &pt, bool bLeft)
+{
+	return __super::OnDragUp(from, pt, bLeft);
+}
+bool CShapeChart::HitTest(ObjectInfo& info, CPoint pt)
+{
+	int ret = -1;
+
+	int cnt = m_arrShape.GetCount();
+	for (int i = 0; i < cnt; i++)
+	{
+		if (m_arrShape[i]->HitTest(pt) != -1)
+		{
+			ret = i;
+			info.nPenType = m_arrShape[i]->GetType();
+			info.pShape = dynamic_cast<IKShape*>(m_arrShape[i]);
+			break;
+		}
+	}
+
+	if (ret != -1)
+	{
+		info.type = OT_SHAPE;
+		info.idx = ret;
+		info.fValue = m_pAxisY->Pix2Value(pt.y);
+		info.nPos = (int)m_pAxisX->Pix2Value(pt.x);
+		info.time = (__time32_t)m_pAxisX->GetHisData()->GetAt(info.nPos).time;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+bool CShapeChart::OnMouseMove(CPoint& pt)
+{
+	if (m_pAxisX == NULL || m_pAxisY == NULL)
+	{
+		return __super::OnMouseMove(pt);
+	}
+	if (m_pCurShapePen)
+	{
+		Refresh();
+	}
+	if (m_pCurShape)
+	{
+		m_pCurShape->OnMove(pt);
+		Refresh();
+		return true;
+	}
+	else
+	{
+		int cnt = m_arrShape.GetCount();
+		for (int i = 0; i < cnt; i++)
+		{
+			if (m_arrShape[i]->HitTest(pt) != -1)
+			{
+				m_arrShape[i]->SetHot(true);
+			}
+			else
+			{
+				m_arrShape[i]->SetHot(false);
+			}
+		}
+		if (cnt > 0)
+		{
+			Refresh();
+		}
+	}
+	return __super::OnMouseMove(pt);
+}
+
+void CShapeChart::SetCurShape(CShape* pShape)
+{
+	if (m_pCurShape != NULL)
+		m_pCurShape->Select(false);
+	m_pCurShape = pShape;
+	if (m_pCurShape != NULL)
+		m_pCurShape->Select(true);
+}
+CShape *CShapeChart::GetShap(int idx)
+{
+	if (idx < 0 || idx >= static_cast<int>(m_arrShape.GetCount()))
+		return NULL;
+	return m_arrShape[idx];
+}
+void CShapeChart::DeleteAlleShape()
+{
+	for (size_t i = 0; i < m_arrShape.GetCount(); i++)
+	{
+		delete m_arrShape[i];
+		m_arrShape[i] = NULL;
+	}
+	m_arrShape.RemoveAll();
+
+	if (m_pCurShapePen)
+	{
+		delete m_pCurShapePen;
+		m_pCurShapePen = NULL;
+	}
+}
 void CShapeChart::SelectPen(int type)
 {
-// 	if (m_bMainChart)
-// 	{
-// 		SetCurShape(NULL);
-// 
-// 		if (m_pCurShapePen != NULL)
-// 		{
-// 			delete m_pCurShapePen;
-// 			m_pCurShapePen = NULL;
-// 			Refresh();
-// 		}
-// 
-// 		m_curPen = (RAPenType)type;
-// 
+	if (m_bMainChart)
+	{
+		SetCurShape(NULL);
+		if (m_pCurShapePen != NULL)
+		{
+			delete m_pCurShapePen;
+			m_pCurShapePen = NULL;
+			Refresh();
+		}
+		m_curPen = (ChartPenType)type;
 // 		if (m_curPen == doICON)
 // 		{
 // 			CDlgIconSelect dlg;
@@ -83,7 +190,7 @@ void CShapeChart::SelectPen(int type)
 // 			}
 // 			else
 // 			{
-// 				m_pCurShapePen = ShapeFactory()->CreatePen((RAPenType)type, m_pAxisX, m_pAxisY);
+// 				m_pCurShapePen = ShapeFactory()->CreatePen((ChartPenType)type, m_pAxisX, m_pAxisY);
 // 				m_pCurShapePen->SetIcon(dlg.GetSelectIcon());
 // 
 // 			}
@@ -117,15 +224,13 @@ void CShapeChart::SelectPen(int type)
 // 				CMyStatic* pStatic = m_pBrowser->m_pStatic;
 // 
 // 			}
-// 
 // 		}
 // 		else
 // 		{
-// 			m_pCurShapePen = ShapeFactory()->CreatePen((RAPenType)type, m_pAxisX, m_pAxisY);
+// 			m_pCurShapePen = ShapeFactory()->CreatePen((ChartPenType)type, m_pAxisX, m_pAxisY);
 // 		}
-// 
-// 		Refresh();
-// 	}
+		Refresh();
+	}
 }
 void CShapeChart::DrawObjects(IRenderTarget* pRender, bool bRedraw)
 {
@@ -142,9 +247,33 @@ void CShapeChart::DrawObjects(IRenderTarget* pRender, bool bRedraw)
 	rgnOld.CreateRectRgn(rcClip.left, rcClip.top, rcClip.right, rcClip.bottom);
 
 // 	pRender->SelectClipRgn(&rgn, RGN_AND);
-// 	DrawShape(pDC);
+// 	DrawShape(pRender);
 // 	pRender->SelectClipRgn(&rgnOld, RGN_OR);
 }
+
+void CShapeChart::DrawShape(IRenderTarget* pRender)
+{
+	if (m_bMainChart)
+	{
+		for (size_t i = 0; i < m_arrShape.GetCount(); i++)
+		{
+			m_arrShape[i]->ResetAxis(m_pAxisX, m_pAxisY);
+		}
+	}
+
+	for (size_t i = 0; i < m_arrShape.GetCount(); i++)
+	{
+		m_arrShape[i]->BeginDraw(pRender);
+		m_arrShape[i]->Draw(pRender);
+		m_arrShape[i]->EndDraw(pRender);
+	}
+
+	if (m_pCurShapePen)
+	{
+		m_pCurShapePen->Draw(pRender);
+	}
+}
+
 void CShapeChart::AfterShapePenClick()
 {
 	if (m_pCurShapePen)
@@ -166,4 +295,119 @@ void CShapeChart::AfterShapePenClick()
 BOOL CShapeChart::IsDrawShape()
 {
 	return m_curPen != doSelect;
+}
+void CShapeChart::GetShapeArray(SArray<CShape*>& arr)
+{
+	arr.RemoveAll();
+	arr.Copy(m_arrShape);
+	m_arrShape.RemoveAll();
+}
+void CShapeChart::SetArrShape(SArray<CShape*>& arrShape)
+{
+	m_arrShape.RemoveAll();
+	m_arrShape.Copy(arrShape);
+	for (size_t i = 0; i < m_arrShape.GetCount(); i++)
+	{
+		m_arrShape[i]->ResetX();
+	}
+	arrShape.RemoveAll();
+}
+IKShape * CShapeChart::AddShape(const KShapeData& data)
+{
+	if (m_pAxisX == NULL || m_pAxisX->GetDataCount() == 0) return NULL;
+
+	SArray<ChartDot> arrDot;
+	for (int i = 0; i < data.nDotCount; i++)
+	{
+		ChartDot cur;
+		cur.tm = data.Dots[i].time;
+		cur.y = data.Dots[i].price;
+		cur.x = 0;
+		arrDot.Add(cur);
+	}
+	CShape *pShape = ShapeFactory()->CreateShape((ChartPenType)data.type, data.penWid, data.clr, arrDot, m_pAxisX, m_pAxisY);
+	pShape->SetText(S_CA2W(data.txt));
+	pShape->SetIcon(data.nIcon);
+	if (pShape == NULL) return NULL;
+	m_arrShape.Add(pShape);
+	return dynamic_cast<IKShape*>(pShape);
+}
+
+int CShapeChart::GetAllShape(IKShapePtr* pShapes, int count)
+{
+	int nAct = min(count, static_cast<int>(m_arrShape.GetCount()));
+
+	if (pShapes)
+	{
+		for (int i = 0; i < nAct; i++)
+		{
+			pShapes[i] = dynamic_cast<IKShape*>(m_arrShape[i]);
+		}
+	}
+	return m_arrShape.GetCount();
+}
+
+void CShapeChart::RemoveShape(IKShape* pShape)
+{
+	for (size_t i = 0; i < m_arrShape.GetCount(); i++)
+	{
+		if (pShape == m_arrShape[i])
+		{
+			CShape* p = dynamic_cast<CShape*>(pShape);
+			delete p;
+			m_arrShape.RemoveAt(i);
+			break;
+		}
+	}
+}
+int CShapeChart::GetCursor(CPoint& pt)
+{
+	if (m_rcObj.PtInRect(pt) && m_bMainChart)
+	{
+		switch (m_curPen)
+		{
+			case  doSelect:
+			{
+				if (m_pCurShape != NULL)
+				{
+					if (m_pCurShape->IsSizing())
+						return CURSOR_DRAG;
+					else
+						return CURSOR_MOVING;
+				}
+				else
+				{
+					int ret = -1;
+					int cnt = m_arrShape.GetCount();
+					for (int i = 0; i < cnt; i++)
+					{
+						m_arrShape[i]->ResetAxis(m_pAxisX, m_pAxisY);
+						ret = m_arrShape[i]->HitTest(pt);
+						if (ret != -1)
+							break;
+					}
+
+					if (ret == -2)
+					{
+						return CURSOR_HAND;
+					}
+					else if (ret >= 0)
+					{
+						return CURSOR_HANDCLICK;
+					}
+					return __super::GetCursor(pt);
+				}
+			}
+			case  doDELETE:
+			return CURSOR_EREASE;
+			case  doTEXT:
+			{
+				return CURSOR_TEXT;
+			}
+			default:
+			return CURSOR_PEN;
+		}
+	}
+	else
+		return __super::GetCursor(pt);
 }

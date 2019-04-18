@@ -28,7 +28,7 @@ CShapePen::~CShapePen(void)
 {
 }
 
-void CShapePen::Create(RAPenType type, CAxis *pAixsX, CAxis *pAxisY)
+void CShapePen::Create(ChartPenType type, CAxis *pAixsX, CAxis *pAxisY)
 {
 	m_type = type;
 	m_pAxisX = pAixsX;

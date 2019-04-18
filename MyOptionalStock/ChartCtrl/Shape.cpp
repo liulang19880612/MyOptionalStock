@@ -217,7 +217,7 @@ m_nLineMonitId(-1)
 
 }
 
-void CShape::Create(RAPenType type, CAxis * pAxisX, CAxis *pAxisY, const SArray<ChartDot>& data,COLORREF clr, int penWid)
+void CShape::Create(ChartPenType type, CAxis * pAxisX, CAxis *pAxisY, const SArray<ChartDot>& data,COLORREF clr, int penWid)
 {
 	m_Type = type;
 	m_pAxisX = pAxisX;
@@ -236,7 +236,7 @@ void CShape::Create(RAPenType type, CAxis * pAxisX, CAxis *pAxisY, const SArray<
 		if (m_Gripers[i].tm > 0)
 		{
 			
-			m_Gripers[i].x = pTmAxis->GetXValueByTime(m_Gripers[i].tm);
+			m_Gripers[i].x = static_cast<long>(pTmAxis->GetXValueByTime(m_Gripers[i].tm));
 		}
 		else if (m_Gripers[i].x >= 0)
 		{
@@ -261,7 +261,7 @@ void CShape::GetData(KShapeData& data)		//返回图形数据，以便进行序列化保存
 	data.nIcon = m_nIcon;
 	for(int i=0;i<data.nDotCount;i++)
 	{
-		data.Dots[i].time = m_Gripers[i].tm;
+		data.Dots[i].time = static_cast<int>(m_Gripers[i].tm);
 		data.Dots[i].price = m_Gripers[i].y;
 	}
 	
@@ -273,8 +273,8 @@ double CShape::GetLineCurPrice(ChartDot dot1, ChartDot dot2)
 	CTimeAxis *pTmAxis = dynamic_cast<CTimeAxis*>(m_pAxisX);
 	if(pTmAxis == NULL) return 0;
 
-	int x1 = pTmAxis->GetXValueByTime(dot1.tm);
-	int x2 = pTmAxis->GetXValueByTime(dot2.tm);
+	int x1 = pTmAxis->GetXValueByTime(static_cast<long>(dot1.tm));
+	int x2 = pTmAxis->GetXValueByTime(static_cast<long>(dot2.tm));
 
 	if(x1<0 || x2<0) return 0;
 
@@ -450,8 +450,8 @@ void CShape::OnMove(const CPoint& pt)
 			{
 				curPt.x = m_PointsOrigin[i].x + offsetX;
 				curPt.y = m_PointsOrigin[i].y + offsetY;
-				curDot.x = m_pAxisX->Pix2Value(curPt.x);
-				curDot.y = m_pAxisY->Pix2Value(curPt.y);
+				curDot.x = static_cast<int>(m_pAxisX->Pix2Value(curPt.x));
+				curDot.y = static_cast<int>(m_pAxisY->Pix2Value(curPt.y));
 
 				CTimeAxis *pTmAxis = (CTimeAxis *)m_pAxisX;
 
@@ -1093,7 +1093,7 @@ void CTriangle::Draw(IRenderTarget*pRender)			//绘制
 		 arrPixAdd.Add(0.5);
 		 for(size_t i=0;i<arrPixAdd.GetCount();i++)
 		 {
-			 int curPixY = ptFrom.y + rc.Height() * (ptCursor.y>ptFrom.y ?  arrPixAdd[i] : (-1*arrPixAdd[i]));
+			 int curPixY = static_cast<int>(ptFrom.y + rc.Height() * (ptCursor.y>ptFrom.y ? arrPixAdd[i] : (-1 * arrPixAdd[i])));
 			 m_arrLines.Add(DrawSheXian(pRender,ptFrom,CPoint(ptCursor.x,curPixY),m_clr,m_nPenWid));
 
 			 int curPixX = static_cast<int>(ptFrom.x + rc.Width() * arrPixAdd[i]);
